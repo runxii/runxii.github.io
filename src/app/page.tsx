@@ -1,16 +1,15 @@
-import React, { Suspense } from 'react';
-import { HeroSection } from '@/components/layout/HeroSection';
-
 export default function HomePage() {
-  return (
-      <div className="container mx-auto max-w-4xl">
-        <Suspense fallback={
-          <div className="h-96 flex items-center justify-center font-pixel text-retro-gray">
-            INITIALIZING SYSTEM...
-          </div>
-        }>
-          <HeroSection />
-        </Suspense>
-      </div>
-  );
+    return (
+        <main className="min-h-dvh bg-black text-white">
+            <section id="start" className="px-6 py-10">
+                <div className="text-sm opacity-70">Phase 0 scaffold</div>
+                <h1 className="mt-6 text-4xl font-bold tracking-tight">
+                    Hi, I’m Yang. And I do…
+                </h1>
+                <p className="mt-4 max-w-xl text-base opacity-80">
+                    Next: brutal hero + grain backdrop + slot-machine identity switch.
+                </p>
+            </section>
+        </main>
+    );
 }
