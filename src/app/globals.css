@@ -2,11 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body {
-  height: 100%;
+:root {
+  --bg: 0 0 0;
+  --fg: 255 255 255;
+
+  /* default (role: sde) */
+  --accent: 120 65 255;
+  --accent-2: 40 120 255;
+
+  --grain-opacity: 0.10;
 }
 
+html, body { height: 100%; }
+
 body {
-  background: #000;
-  color: #fff;
+  background: rgb(var(--bg));
+  color: rgb(var(--fg));
+}
+
+::selection {
+  background: rgba(var(--accent), 0.35);
+}
+
+.vignette { position: relative; }
+.vignette::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+          1200px 700px at 50% 20%,
+          transparent 0%,
+          rgba(0,0,0,0.55) 70%,
+          rgba(0,0,0,0.85) 100%
+  );
+}
+
+/* Role theme switching: set on <body data-role="..."> */
+body[data-role="sde"] {
+  --accent: 120 65 255;
+  --accent-2: 40 120 255;
+}
+body[data-role="security"] {
+  --accent: 55 130 255;
+  --accent-2: 120 65 255;
+}
+body[data-role="pm"] {
+  --accent: 160 255 80;
+  --accent-2: 55 130 255;
+}
+body[data-role="design"] {
+  --accent: 255 80 180;
+  --accent-2: 120 65 255;
 }
