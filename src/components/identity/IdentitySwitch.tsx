@@ -23,36 +23,38 @@ export function IdentitySwitch() {
     }, [nextRole, prevRole]);
 
     return (
-        <div className="mt-8 flex items-center gap-4 text-xl md:text-2xl">
-            <span className="opacity-70">Identity:</span>
+        <div className="w-full m-auto">
+            <div className="mt-10 flex justify-end">
+                <div className="flex items-baseline gap-6">
+                    {/*<button
+                        type="button"
+                        onClick={prevRole}
+                        aria-label="Previous role"
+                        className="select-none rounded-full border border-foreground/30 px-6 py-4 text-[6vw] md:text-[56px] uppercase tracking-[0.10em] opacity-80 hover:opacity-100 font-pixel leading-none"
+                    >
+                        ←
+                    </button>*/}
 
-            <div className="flex items-center gap-3">
-                <button
-                    type="button"
-                    onClick={prevRole}
-                    aria-label="Previous role"
-                    className="select-none rounded-full border border-white/20 px-3 py-1 text-sm uppercase tracking-[0.14em] opacity-80 hover:opacity-100"
-                >
-                    ←
-                </button>
+                    {/* SLOT TEXT: same scale as H1 */}
+                    <div
+                        className="font-semibold tracking-[-0.04em] leading-[0.84] text-[6vw] md:text-[2em] inline-flex items-baseline">
+                        <div className="min-w-[18ch] md:min-w-[22ch]">
+                            <SlotTape items={labels} activeIndex={activeIndex} itemPx={135}/>
+                        </div>
+                    </div>
 
-                <div className="font-semibold tracking-[-0.01em]">
-                    <SlotTape items={labels} activeIndex={activeIndex} />
+                    <button
+                        type="button"
+                        onClick={nextRole}
+                        aria-label="Next role"
+                        className="select-none rounded-full border border-foreground/30 px-6 py-4 text-[6vw] md:text-[56px] uppercase tracking-[0.10em] opacity-80 hover:opacity-100 font-pixel leading-none"
+                    >
+                        →
+                    </button>
                 </div>
-
-                <button
-                    type="button"
-                    onClick={nextRole}
-                    aria-label="Next role"
-                    className="select-none rounded-full border border-white/20 px-3 py-1 text-sm uppercase tracking-[0.14em] opacity-80 hover:opacity-100"
-                >
-                    →
-                </button>
             </div>
-
-            <span className="ml-2 text-xs font-medium uppercase tracking-[0.18em] opacity-60">
-        (← / →)
-      </span>
         </div>
+
+
     );
 }

@@ -6,5 +6,5 @@ export const ROLES: Record<RoleKey, { label: string; watermark: string }> = {
     sde: { label: "Software Engineer", watermark: "y" },
     security: { label: "Security Engineer", watermark: "s" },
     pm: { label: "Product / PM", watermark: "p" },
-    design: { label: "Design / Motion", watermark: "d" },
+    design: { label: "Design / Art", watermark: "d" },
 } as const;
