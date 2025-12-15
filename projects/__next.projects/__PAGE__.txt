@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:"$Sreact.suspense"
+3:I[64517,["/portfolio-gamified/_next/static/chunks/5daa54627a2e0076.js","/portfolio-gamified/_next/static/chunks/cb0884db00a4d4b3.js"],"ProjectList"]
+4:I[97367,["/portfolio-gamified/_next/static/chunks/42879de7b8087bc9.js"],"OutletBoundary"]
+0:{"buildId":"sEva-51LRBhzYTGcFhwCK","rsc":["$","$1","c",{"children":[["$","$2",null,{"fallback":["$","div",null,{"className":"h-96 flex items-center justify-center font-pixel text-retro-gray","children":"LOADING PROJECT DATA..."}],"children":["$","$L3",null,{}]}],[["$","script","script-0",{"src":"/portfolio-gamified/_next/static/chunks/5daa54627a2e0076.js","async":true}],["$","script","script-1",{"src":"/portfolio-gamified/_next/static/chunks/cb0884db00a4d4b3.js","async":true}]],["$","$L4",null,{"children":["$","$2",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+5:null

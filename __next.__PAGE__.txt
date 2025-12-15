@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
 2:"$Sreact.suspense"
-3:I[39270,["/portfolio-gamified/_next/static/chunks/2d79845309210b1e.js"],"HeroSection"]
+3:I[39270,["/portfolio-gamified/_next/static/chunks/7f5c7a408599df0a.js","/portfolio-gamified/_next/static/chunks/cb0884db00a4d4b3.js"],"HeroSection"]
 4:I[97367,["/portfolio-gamified/_next/static/chunks/42879de7b8087bc9.js"],"OutletBoundary"]
-0:{"buildId":"f9gxvvzBqrZ_NjflQcMRs","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"container mx-auto max-w-4xl","children":["$","$2",null,{"fallback":["$","div",null,{"className":"h-96 flex items-center justify-center font-pixel text-retro-gray","children":"INITIALIZING SYSTEM..."}],"children":["$","$L3",null,{}]}]}],[["$","script","script-0",{"src":"/portfolio-gamified/_next/static/chunks/2d79845309210b1e.js","async":true}]],["$","$L4",null,{"children":["$","$2",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"sEva-51LRBhzYTGcFhwCK","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"container mx-auto max-w-4xl","children":["$","$2",null,{"fallback":["$","div",null,{"className":"h-96 flex items-center justify-center font-pixel text-retro-gray","children":"INITIALIZING SYSTEM..."}],"children":["$","$L3",null,{}]}]}],[["$","script","script-0",{"src":"/portfolio-gamified/_next/static/chunks/7f5c7a408599df0a.js","async":true}],["$","script","script-1",{"src":"/portfolio-gamified/_next/static/chunks/cb0884db00a4d4b3.js","async":true}]],["$","$L4",null,{"children":["$","$2",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
 5:null
