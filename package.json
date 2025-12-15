@@ -8,10 +8,12 @@
     "start": "next start",
     "lint": "eslint",
     "export": "next build && next export",
-    "deploy": "next build && gh-pages -d out"
+    "deploy": "next build && gh-pages -d out -b main -r https://github.com/runxii/runxii.github.io.git"
   },
   "dependencies": {
     "clsx": "^2.1.1",
+    "framer-motion": "^12.23.26",
+    "lucide-react": "^0.561.0",
     "next": "16.0.10",
     "react": "19.2.1",
     "react-dom": "19.2.1",
