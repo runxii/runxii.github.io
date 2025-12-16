@@ -13,9 +13,8 @@ export const PROJECTS: Project[] = [
         tags: ["AWS", "RAG", "Agents"],
         roles: ["sde", "pm"],
         featuredFor: ["sde", "pm"],
-        links: [
-            { label: "GitHub", href: "https://github.com/" },
-        ],
+        previewImage: "/images/projects/fred-gpt.webp",
+        links: [{ label: "GitHub", href: "https://github.com/" }],
     },
     {
         slug: "cloud-security",
@@ -25,6 +24,7 @@ export const PROJECTS: Project[] = [
         tags: ["Cloud", "Risk", "Security"],
         roles: ["security", "pm"],
         featuredFor: ["security"],
+        previewImage: "/images/projects/cloud-security.webp",
     },
     {
         slug: "mentorbridge",
@@ -34,5 +34,6 @@ export const PROJECTS: Project[] = [
         tags: ["HCI", "LLM", "Education"],
         roles: ["pm", "design", "sde"],
         featuredFor: ["pm", "design"],
+        previewImage: "/images/projects/mentorbridge.webp",
     },
 ];

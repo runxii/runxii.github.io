@@ -3,27 +3,26 @@
 import { ROLE_ORDER, ROLES } from "@/data/roles";
 import { useRoleStore } from "@/store/roleStore";
 import type { RoleKey } from "@/types/role";
+import { cn } from "@/lib/cn";
 
 export function WorkFilters() {
     const role = useRoleStore((s) => s.role);
     const setRole = useRoleStore((s) => s.setRole);
 
     return (
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="flex flex-wrap items-center gap-3">
             {ROLE_ORDER.map((k) => {
                 const active = k === role;
+
                 return (
                     <button
                         key={k}
                         type="button"
                         onClick={() => setRole(k as RoleKey)}
-                        className={[
-                            "px-4 py-2 text-xs uppercase tracking-[0.18em] transition",
-                            "border",
-                            active ? "border-white/50 opacity-100" : "border-white/15 opacity-70 hover:opacity-100",
-                            "bg-white/0 hover:bg-white/5",
-                            "rounded-full",
-                        ].join(" ")}
+                        className={cn(
+                            "work-pill font-serif text-sm tracking-wide flex-1 min-w-[180px]",
+                            active && "work-pill--active"
+                        )}
                     >
                         {ROLES[k].label}
                     </button>

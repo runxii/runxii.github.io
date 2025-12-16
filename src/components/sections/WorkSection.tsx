@@ -20,9 +20,9 @@ export function WorkSection() {
                         <h2 className="mt-4 text-4xl font-extrabold tracking-[-0.04em] md:text-6xl">
                             Selected projects
                         </h2>
-                        <p className="mt-3 text-sm opacity-75">
+                        {/*<p className="mt-3 text-sm opacity-75">
                             Filtered by identity: <span className="opacity-95">{ROLES[role].label}</span>
-                        </p>
+                        </p>*/}
                     </div>
 
                     <WorkFilters />

@@ -7,6 +7,7 @@ export type Project = {
     title: string;
     year: string;
     summary: string;
+    previewImage?: string;
     tags: string[];
     roles: RoleKey[];
     featuredFor?: RoleKey[];

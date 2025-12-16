@@ -39,27 +39,49 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 # File Structure
 
 ```
-.
-├── app/
-│   ├── (public)/           # Public facing routes
-│   │   ├── projects/
-│   │   │   └── page.tsx
-│   │   ├── blog/
-│   │   │   └── page.tsx    # Future MDX integration point
-│   │   └── page.tsx        # Home / Personal Intro (Primary)
-│   ├── globals.css
-│   └── layout.tsx          # Root layout
-├── components/
-│   ├── ui/                 # Reusable atoms (Button, Card, Input)
-│   ├── projects/           # Project list/card components
-│   └── layout/             # Navbar, Footer
-│   └── gamify/             # SlotMachine component
-├── lib/
-│   ├── actions.ts          # Placeholder, likely unused/removed
-│   └── utils.ts            # CN helper
-├── data/                   # NEW: Static data source
-│   ├── roles.ts            # Definitions for SDE, PM, DESIGN roles
-│   └── projects.ts         # JSON-like data for projects
-└── tailwind.config.ts
+└── src/
+    ├── types/
+    │   ├── project.ts
+    │   └── role.ts
+    ├── store/
+    │   └── roleStore.ts
+    ├── lib/
+    │   ├── cn.ts
+    │   ├── projectFilter.ts
+    │   └── utils.ts
+    ├── data/
+    │   ├── labs.ts
+    │   ├── projects.ts
+    │   └── roles.ts
+    ├── config/
+    │   └── site.ts
+    ├── app/
+    │   ├── globals.css
+    │   ├── layout.tsx
+    │   ├── page.tsx
+    │   └── work/
+    │       └── page.tsx
+    └── components/
+        ├── work/
+        │   ├── ProjectCard.tsx
+        │   ├── ProjectGrid.tsx
+        │   ├── WorkFilters.tsx
+        │   └── WorkPageClient.tsx
+        ├── sections/
+        │   ├── AboutSection.tsx
+        │   ├── ContactSection.tsx
+        │   ├── FooterLinks.tsx
+        │   ├── LabSection.tsx
+        │   ├── Navbar.tsx
+        │   ├── StartSection.tsx
+        │   └── WorkSection.tsx
+        ├── layout/
+        │   └── PageShell.tsx
+        ├── identity/
+        │   ├── IdentitySwitch.tsx
+        │   ├── RoleBodyAttr.tsx
+        │   └── SlotTape.tsx
+        └── backdrop/
+            └── GrainBackdrop.tsx
 
 ```
