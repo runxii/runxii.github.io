@@ -34,10 +34,10 @@ export function SlotTape({
                 {tape.map((t, idx) => (
                     <div
                         key={`${t}-${idx}`}
-                        className="whitespace-nowrap text-2xl font-bold text-center"
+                        className="whitespace-nowrap font-bold text-center"
                         style={{height: itemPx, lineHeight: `${itemPx}px`}}
                     >
-                        {t}
+                        <h1>{t}</h1>
                     </div>
                 ))}
             </motion.div>

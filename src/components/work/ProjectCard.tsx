@@ -33,8 +33,8 @@ export function ProjectCard({ project }: { project: Project }) {
                 }}
             >
                 <div className="flex items-start justify-between gap-6">
-                    <h3 className="text-2xl font-serif tracking-tight">{project.title}</h3>
-                    <span className="text-xs uppercase tracking-[0.18em] opacity-60">{project.year}</span>
+                    <h3 className="text-2xl tracking-tight">{project.title}</h3>
+                    <span className="text-sm uppercase opacity-60">{project.year}</span>
                 </div>
 
                 <p className="mt-3 text-sm opacity-75">{project.summary}</p>

@@ -17,9 +17,9 @@ export function WorkSection() {
                 <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
                     <div>
                         <p className="section-label">Work</p>
-                        <h2 className="mt-4 text-4xl font-extrabold tracking-[-0.04em] md:text-6xl">
+                        {/*<h2 className="mt-4 text-4xl font-extrabold tracking-[-0.04em] md:text-6xl">
                             Selected projects
-                        </h2>
+                        </h2>*/}
                         {/*<p className="mt-3 text-sm opacity-75">
                             Filtered by identity: <span className="opacity-95">{ROLES[role].label}</span>
                         </p>*/}
@@ -28,7 +28,7 @@ export function WorkSection() {
                     <WorkFilters />
                 </div>
 
-                <div className="mt-10">
+                <div className="mt-20">
                     <ProjectGrid projects={visible} />
                 </div>
 

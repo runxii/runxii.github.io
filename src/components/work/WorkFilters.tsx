@@ -20,7 +20,7 @@ export function WorkFilters() {
                         type="button"
                         onClick={() => setRole(k as RoleKey)}
                         className={cn(
-                            "work-pill font-serif text-sm tracking-wide flex-1 min-w-[180px]",
+                            "work-pill tracking-[-0.04em] text-sm tracking-wide flex-1 min-w-[180px]",
                             active && "work-pill--active"
                         )}
                     >

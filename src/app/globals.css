@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,10 +7,6 @@
 :root {
   --bg: 0 0 0;
   --fg: 255 255 255;
-
-  /* default (role: sde) */
-  --accent: 120 65 255;
-  --accent-2: 40 120 255;
 
   --grain-opacity: 0.10;
 
@@ -18,6 +16,7 @@
 
   --font-serif: ui-serif, Georgia, "Times New Roman", serif;
   --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont;
+  --font-mono: "Roboto Mono", Consolas, "Liberation Mono", Menlo, monospace;
 
 }
 
@@ -26,16 +25,21 @@ html, body { height: 100%; }
 body {
   background: rgb(var(--bg));
   color: rgb(var(--fg));
-  font-family: var(--font-sans), sans-serif;
+  /*font-family: var(--font-sans), serif;*/
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3 {
+h2 {
   font-family: var(--font-serif), serif;
 }
 
+a {
+  color: inherit;
+  font-family: inherit;
+  text-decoration: none;
+}
 
 ::selection {
   background: rgba(255, 255, 255, 0.2);
@@ -55,31 +59,18 @@ h1, h2, h3 {
   );
 }
 
-/* Role theme switching: set on <body data-role="..."> */
-body[data-role="sde"] {
-  --accent: 120 65 255;
-  --accent-2: 40 120 255;
-}
-body[data-role="security"] {
-  --accent: 55 130 255;
-  --accent-2: 120 65 255;
-}
-body[data-role="pm"] {
-  --accent: 160 255 80;
-  --accent-2: 55 130 255;
-}
-body[data-role="design"] {
-  --accent: 255 80 180;
-  --accent-2: 120 65 255;
+.slot-tape {
+  font-family: var(--font-mono), monospace;
 }
 
 /* brutal section label */
 .section-label {
   letter-spacing: 0.18em;
   text-transform: uppercase;
+  font-family: var(--font-sans), sans-serif;
   font-weight: 600;
   opacity: 0.72;
-  font-size: 12px;
+  font-size: 0.8em;
 }
 
 /* consistent container */
@@ -107,6 +98,8 @@ body[data-role="design"] {
 
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(255, 255, 255, 0.05);
+
+  font-family: var(--font-mono), monospace;
 
   /* frosted */
   backdrop-filter: blur(10px);
@@ -136,7 +129,7 @@ body[data-role="design"] {
 }
 
 .work-pill--active {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.22);
   border-color: rgba(255, 255, 255, 0.26);
   color: rgba(255, 255, 255, 0.96);
   box-shadow: 0 12px 46px rgba(0, 0, 0, 0.72);

@@ -2,13 +2,17 @@ import { NAV } from "@/config/site";
 
 export function Navbar() {
     return (
-        <header className="absolute left-0 right-0 top-0 z-20 px-6 py-5">
-            <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-medium uppercase tracking-[0.18em] opacity-80">
+        <header className="absolute top-0 left-3/4 sm:left-0 right-0 z-20 px-10 py-5 w-1/4 sm:w-full">
+            <nav className="flex justify-end items-center
+          flex-wrap md:flex-nowrap
+          gap-x-6 gap-y-4 md:gap-y-0
+          text-xs sm:text-sm
+          uppercase">
                 {NAV.map((item) => (
                     <a
                         key={item.key}
                         href={item.href}
-                        className="hover:opacity-100 transition-opacity"
+                        className="opacity-70 hover:opacity-100 font-normal hover:font-bold transition-all duration-200 ease-in-out"
                     >
                         {item.label}
                     </a>
