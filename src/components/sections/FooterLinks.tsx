@@ -8,7 +8,7 @@ export function FooterLinks() {
     ];
 
     return (
-        <div className="absolute bottom-6 left-0 right-0 z-20 px-6">
+        <div className="container-brutal">
             <div className="flex items-center justify-center gap-10 text-xs font-medium uppercase tracking-[0.18em] opacity-75">
                 {links.map((l) => (
                     <a key={l.label} href={l.href} className="hover:opacity-100 transition-opacity">

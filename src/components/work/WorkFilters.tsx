@@ -18,8 +18,11 @@ export function WorkFilters() {
                         type="button"
                         onClick={() => setRole(k as RoleKey)}
                         className={[
-                            "rounded-full border px-4 py-2 text-xs uppercase tracking-[0.18em] transition",
-                            active ? "border-white/40 opacity-100" : "border-white/15 opacity-70 hover:opacity-100",
+                            "px-4 py-2 text-xs uppercase tracking-[0.18em] transition",
+                            "border",
+                            active ? "border-white/50 opacity-100" : "border-white/15 opacity-70 hover:opacity-100",
+                            "bg-white/0 hover:bg-white/5",
+                            "rounded-full",
                         ].join(" ")}
                     >
                         {ROLES[k].label}

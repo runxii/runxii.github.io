@@ -11,6 +11,10 @@
   --accent-2: 40 120 255;
 
   --grain-opacity: 0.10;
+
+  --container: 72rem; /* 1152px */
+  --gutter: 24px;
+  --section-pad-y: 120px;
 }
 
 html, body { height: 100%; }
@@ -18,6 +22,9 @@ html, body { height: 100%; }
 body {
   background: rgb(var(--bg));
   color: rgb(var(--fg));
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
@@ -54,4 +61,24 @@ body[data-role="pm"] {
 body[data-role="design"] {
   --accent: 255 80 180;
   --accent-2: 120 65 255;
+}
+
+/* brutal section label */
+.section-label {
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  opacity: 0.72;
+  font-size: 12px;
+}
+
+/* consistent container */
+.container-brutal {
+  width: min(var(--container), calc(100% - (var(--gutter) * 2)));
+  margin-inline: auto;
+}
+
+/* anchor offset so navbar doesn't cover jump links */
+[id] {
+  scroll-margin-top: 96px;
 }

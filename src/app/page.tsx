@@ -1,17 +1,18 @@
-import { GrainBackdrop } from "@/components/backdrop/GrainBackdrop";
+import { PageShell } from "@/components/layout/PageShell";
 import { StartSection } from "@/components/sections/StartSection";
-import { Navbar } from "@/components/sections/Navbar";
-import { FooterLinks } from "@/components/sections/FooterLinks";
-import { RoleBodyAttr } from "@/components/identity/RoleBodyAttr";
+import { WorkSection } from "@/components/sections/WorkSection";
+import { LabSection } from "@/components/sections/LabSection";
+import { AboutSection } from "@/components/sections/AboutSection";
+import { ContactSection } from "@/components/sections/ContactSection";
 
 export default function HomePage() {
     return (
-        <main className="relative min-h-dvh bg-black text-white">
-            <RoleBodyAttr />
-            <GrainBackdrop />
-            <Navbar />
+        <PageShell>
             <StartSection />
-            <FooterLinks />
-        </main>
+            <WorkSection />
+            <LabSection />
+            <AboutSection />
+            <ContactSection />
+        </PageShell>
     );
 }
