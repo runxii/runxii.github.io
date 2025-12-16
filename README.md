@@ -55,8 +55,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 │   └── layout/             # Navbar, Footer
 │   └── gamify/             # SlotMachine component
 ├── lib/
-│   ├── actions.ts          # Placeholder, likely unused/removed
-│   └── utils.ts            # CN helper
+│   ├── projectFilter.ts    # Project filter by roles
+│   └── cn.ts               # ClassNames
 ├── data/                   # NEW: Static data source
 │   ├── roles.ts            # Definitions for SDE, PM, DESIGN roles
 │   └── projects.ts         # JSON-like data for projects

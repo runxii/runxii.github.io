@@ -6,9 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "postbuild": "node -e \"require('fs').writeFileSync('out/.nojekyll','')\"",
     "lint": "eslint",
-    "export": "next build && next export",
-    "deploy": "next build && gh-pages -d out -b main -r https://github.com/runxii/runxii.github.io.git"
+    "export": "next export",
+    "deploy": "gh-pages -d out -b main -r https://github.com/runxii/runxii.github.io.git --dotfiles"
   },
   "dependencies": {
     "clsx": "^2.1.1",
