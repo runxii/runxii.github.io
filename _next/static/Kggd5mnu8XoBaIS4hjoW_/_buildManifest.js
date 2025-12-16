@@ -1,7 +1,12 @@
 self.__BUILD_MANIFEST = {
   "__rewrites": {
     "afterFiles": [],
-    "beforeFiles": [],
+    "beforeFiles": [
+      {
+        "source": "/runxii.github.io//_next/:path+",
+        "destination": "/runxii.github.io/_next/:path+"
+      }
+    ],
     "fallback": []
   },
   "sortedPages": [
