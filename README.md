@@ -81,7 +81,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
         │   ├── IdentitySwitch.tsx
         │   ├── RoleBodyAttr.tsx
         │   └── SlotTape.tsx
-        └── backdrop/
-            └── GrainBackdrop.tsx
+        └── ui/
+            └── GlassButton.tsx
 
 ```
