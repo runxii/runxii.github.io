@@ -1,4 +1,4 @@
-import { GrainBackdrop } from "@/components/backdrop/GrainBackdrop";
+//import { GrainBackdrop } from "@/components/backdrop/GrainBackdrop";
 import { PatternBackdrop } from "@/components/backdrop/PatternBackdrop";
 import { Navbar } from "@/components/sections/Navbar";
 import { FooterLinks } from "@/components/sections/FooterLinks";
@@ -8,7 +8,6 @@ export function PageShell({ children }: { children: React.ReactNode }) {
     return (
         <main className="relative min-h-dvh bg-black text-white">
             <RoleBodyAttr />
-            <GrainBackdrop className="opacity-70" />
             <PatternBackdrop />
             <Navbar />
 
