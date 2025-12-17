@@ -24,8 +24,8 @@ export function IdentitySwitch() {
 
     return (
         <div className="w-full m-auto">
-            <div className="mt-10 flex justify-end">
-                <div className="m-10 flex items-baseline gap-6">
+            <div className="mt-5 flex justify-end">
+                <div className="flex items-baseline gap-6">
                     {/*<button
                         type="button"
                         onClick={prevRole}
@@ -37,9 +37,9 @@ export function IdentitySwitch() {
 
                     {/* SLOT TEXT: same scale as H1 */}
                     <div
-                        className="font-mono font-bold slot-tape tracking-[-0.04em] leading-[0.84] text-[6vw] md:text-[3em] inline-flex items-baseline">
+                        className="font-mono font-bold slot-tape tracking-[-0.04em] leading-[0.84] text-[1.5em] sm:text-[5vw] inline-flex items-baseline">
                         <div className="min-w-[18ch] md:min-w-[22ch]">
-                            <SlotTape items={labels} activeIndex={activeIndex} itemPx={135}/>
+                            <SlotTape items={labels} activeIndex={activeIndex}/>
                         </div>
                     </div>
 

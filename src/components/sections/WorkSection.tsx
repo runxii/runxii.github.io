@@ -4,8 +4,8 @@ import { PROJECTS } from "@/data/projects";
 import { getVisibleProjects } from "@/lib/projectFilter";
 import { useRoleStore } from "@/store/roleStore";
 import { ROLES } from "@/data/roles";
-import { WorkFilters } from "@/components/work/WorkFilters";
 import { ProjectGrid } from "@/components/work/ProjectGrid";
+import { IdentitySwitch} from "@/components/identity/IdentitySwitch";
 
 export function WorkSection() {
     const role = useRoleStore((s) => s.role);
@@ -13,20 +13,22 @@ export function WorkSection() {
 
     return (
         <section id="work" className="relative">
-            <div className="container-brutal py-[var(--section-pad-y)]">
-                <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div className="container-brutal py-5 md:py-[var(--section-pad-y)]">
+                <div>
                     <div>
-                        <p className="section-label">Work</p>
+                        {/*<p className="section-label">Work</p>*/}
+                        <IdentitySwitch />
                         {/*<h2 className="mt-4 text-4xl font-extrabold tracking-[-0.04em] md:text-6xl">
                             Selected projects
                         </h2>*/}
-                        {/*<p className="mt-3 text-sm opacity-75">
+                        <p className="my-3 text-sm opacity-40 text-right">
                             Filtered by identity: <span className="opacity-95">{ROLES[role].label}</span>
-                        </p>*/}
+                        </p>
                     </div>
-
-                    <WorkFilters />
                 </div>
+                {/*<div>
+                    <WorkFilters />
+                </div>*/}
 
                 <div className="mt-20">
                     <ProjectGrid projects={visible} />

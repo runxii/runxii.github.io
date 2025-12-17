@@ -12,7 +12,7 @@
 
   --container: 72rem; /* 1152px */
   --gutter: 24px;
-  --section-pad-y: 120px;
+  --section-pad-y: 40px;
 
   --font-serif: ui-serif, Georgia, "Times New Roman", serif;
   --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont;
