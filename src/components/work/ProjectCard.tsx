@@ -9,13 +9,12 @@ export function ProjectCard({ project }: { project: Project }) {
                     <img
                         src={project.previewImage}
                         alt={project.title}
-                        className="h-full w-full object-cover transition-[filter,transform] duration-700 ease-out filter scale-[1.03] hover:scale-100"
-
+                        className="h-full w-full object-cover transition-[filter,transform] duration-700 ease-out"
                     />
 
                     {/* Frosted overlay (fade out on hover) */}
                     <div
-                        className="absolute inset-0 bg-black/35 backdrop-blur-xl hover:blur-0 transition-opacity duration-700 ease-out opacity-100 hover:opacity-0"
+                        className="absolute inset-0 bg-black/35 backdrop-blur-xl hover:blur-0 transition-opacity duration-800 ease-in-out opacity-100 hover:opacity-0"
                     />
 
                     {/* Subtle highlight for a premium feel (optional, monochrome) */}
