@@ -2,101 +2,140 @@ import type { Project } from "@/types/project";
 import { useEffect, useRef, useState, useCallback } from 'react';
 
 export function ProjectCard({ project }: { project: Project }) {
-        const [blurStrength, setBlurStrength] = useState(90);
-        const [isMobile, setIsMobile] = useState(false);
-        const imageContainerRef = useRef<HTMLDivElement>(null);
+    const [blurStrength, setBlurStrength] = useState(90);
+    const [isMobile, setIsMobile] = useState(false);
+    const imageContainerRef = useRef<HTMLDivElement>(null);
+    const rafIdRef = useRef<number | null>(null);
 
-        // Detect mobile viewport
-        useEffect(() => {
-            const checkMobile = () => setIsMobile(window.innerWidth <= 1024);
+    // Detect mobile viewport - iOS-safe detection
+    useEffect(() => {
+        const checkMobile = () => {
+            // Use matchMedia which is more reliable on iOS
+            const mobileQuery = window.matchMedia('(max-width: 1023px)');
+            setIsMobile(mobileQuery.matches);
+        };
 
-            checkMobile();
-            window.addEventListener('resize', checkMobile);
+        checkMobile();
 
-            return () => window.removeEventListener('resize', checkMobile);
-        }, []);
+        // Use matchMedia listener for better iOS support
+        const mobileQuery = window.matchMedia('(max-width: 1023px)');
+        const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
 
-        // Stable reference to calculateBlur using useCallback
-        const calculateBlur = useCallback(() => {
-            const container = imageContainerRef.current;
-            if (!container) return;
+        // Modern browsers
+        if (mobileQuery.addEventListener) {
+            mobileQuery.addEventListener('change', handler);
+        } else {
+            // Fallback for older iOS versions
+            mobileQuery.addListener(handler);
+        }
 
+        return () => {
+            if (mobileQuery.removeEventListener) {
+                mobileQuery.removeEventListener('change', handler);
+            } else {
+                mobileQuery.removeListener(handler);
+            }
+        };
+    }, []);
+
+    // Calculate blur based on distance from viewport center
+    useEffect(() => {
+        if (!isMobile) return;
+
+        const container = imageContainerRef.current;
+        if (!container) return;
+
+        const calculateBlur = () => {
             const rect = container.getBoundingClientRect();
-            const viewportHeight = window.innerHeight;
+            // Use visualViewport for iOS, fallback to window.innerHeight
+            const viewportHeight = window.visualViewport?.height || window.innerHeight;
 
-            // Calculate centers
             const imgCenterY = rect.top + rect.height / 2;
             const viewportCenterY = viewportHeight / 2;
-
-            // Distance from image center to viewport center
             const distance = Math.abs(imgCenterY - viewportCenterY);
-
-            // Maximum distance = half viewport height
             const maxDistance = viewportHeight / 2;
-
-            // Normalize distance to 0-1 range and clamp
             const normalizedDistance = Math.min(distance / maxDistance, 1);
-
-            // Linear mapping: 0% at center, 90% at edges
             const blurPercent = 150 * normalizedDistance;
 
             setBlurStrength(Math.round(blurPercent));
-        }, []); // Empty deps - imageContainerRef is stable
+        };
 
-        // Calculate blur based on distance from viewport center
-        useEffect(() => {
-            if (!isMobile) return;
+        // Initial calculation
+        calculateBlur();
 
-            // Initial calculation
-            calculateBlur();
+        // iOS-compatible scroll handler using RAF
+        const handleScroll = () => {
+            if (rafIdRef.current !== null) {
+                cancelAnimationFrame(rafIdRef.current);
+            }
+            rafIdRef.current = requestAnimationFrame(() => {
+                calculateBlur();
+                rafIdRef.current = null;
+            });
+        };
 
-            // Recalculate on scroll with passive listener for performance
-            window.addEventListener('scroll', calculateBlur, { passive: true });
+        // Multiple event listeners for iOS compatibility
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        window.addEventListener('touchmove', handleScroll, { passive: true });
 
-            return () => window.removeEventListener('scroll', calculateBlur);
-        }, [isMobile, calculateBlur]);
+        // iOS visual viewport changes (address bar show/hide)
+        if (window.visualViewport) {
+            window.visualViewport.addEventListener('resize', calculateBlur);
+            window.visualViewport.addEventListener('scroll', handleScroll);
+        }
 
-        const overlayOpacity = blurStrength / 100;
+        return () => {
+            if (rafIdRef.current !== null) {
+                cancelAnimationFrame(rafIdRef.current);
+            }
+            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('touchmove', handleScroll);
+            if (window.visualViewport) {
+                window.visualViewport.removeEventListener('resize', calculateBlur);
+                window.visualViewport.removeEventListener('scroll', handleScroll);
+            }
+        };
+    }, [isMobile]);
 
-        return (
-            <article className="group relative overflow-hidden rounded-3xl border border-white/15 bg-black/40 backdrop-blur-xl">
-                {/* Preview Image (hover: unblur + remove frosted overlay) */}
-                {project.previewImage && (
-                    <div ref={imageContainerRef} className="relative h-56 w-full overflow-hidden">
-                        <img
-                            src={project.previewImage}
-                            alt={project.title}
-                            className="h-full w-full object-cover transition-[filter,transform] duration-700 ease-out"
-                        />
+    const overlayOpacity = blurStrength / 100;
 
-                        {/* Frosted overlay (fade out on hover on desktop, fade based on scroll on mobile) */}
-                        <div
-                            className="absolute inset-0 bg-black/35 transition-opacity duration-800 ease-out lg:backdrop-blur-xl lg:opacity-100 lg:hover:opacity-0"
-                            style={
-                                isMobile
-                                    ? {
-                                        opacity: overlayOpacity,
-                                        backdropFilter: `blur(${blurStrength}px)`,
-                                        transitionProperty: 'opacity, backdrop-filter',
-                                    }
-                                    : undefined
-                            }
-                        />
+    return (
+        <article className="group relative overflow-hidden rounded-3xl border border-white/15 bg-black/40 backdrop-blur-xl">
+            {project.previewImage && (
+                <div ref={imageContainerRef} className="relative h-56 w-full overflow-hidden">
+                    <img
+                        src={project.previewImage}
+                        alt={project.title}
+                        className="h-full w-full object-cover transition-[filter,transform] duration-700 ease-out"
+                    />
 
-                        {/* Subtle highlight for a premium feel (optional, monochrome) */}
-                        <div
-                            className="pointer-events-none absolute inset-0 opacity-70 transition-opacity duration-700 ease-out group-hover:opacity-30"
-                            style={{
-                                background:
-                                    'radial-gradient(600px 220px at 30% 20%, rgba(255,255,255,0.12), transparent 60%)',
-                            }}
-                        />
+                    {/* Frosted overlay - iOS-safe conditional rendering */}
+                    <div
+                        className="absolute inset-0 bg-black/35 transition-opacity duration-300 ease-out lg:backdrop-blur-xl lg:opacity-100 lg:hover:opacity-0"
+                        style={
+                            isMobile
+                                ? {
+                                    opacity: overlayOpacity,
+                                    backdropFilter: `blur(${blurStrength}px)`,
+                                    WebkitBackdropFilter: `blur(${blurStrength}px)`, // iOS Safari prefix
+                                    transitionProperty: 'all',
+                                }
+                                : undefined
+                        }
+                    />
+
+                    <div
+                        className="pointer-events-none absolute inset-0 opacity-70 transition-opacity duration-700 ease-out group-hover:opacity-30"
+                        style={{
+                            background:
+                                'radial-gradient(600px 220px at 30% 20%, rgba(255,255,255,0.12), transparent 60%)',
+                        }}/>
                     </div>
                 )}
 
             {/* Content */}
             <div className="p-7">
-                <div className="flex items-start justify-between gap-6">
+                <div className="flex items-start justify-between align-middle gap-6">
                     <h3 className="text-2xl font-serif font-extrabold tracking-tight">{project.title}</h3>
                     <span className="text-xs uppercase tracking-[0.18em] opacity-60">
             {project.year}
