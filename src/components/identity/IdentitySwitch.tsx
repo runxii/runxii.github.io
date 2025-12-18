@@ -5,6 +5,8 @@ import { useRoleStore } from "@/store/roleStore";
 import { ROLE_ORDER, ROLES } from "@/data/roles";
 import { SlotTape } from "./SlotTape";
 
+
+
 export function IdentitySwitch() {
     const role = useRoleStore((s) => s.role);
     const nextRole = useRoleStore((s) => s.nextRole);
@@ -42,12 +44,11 @@ export function IdentitySwitch() {
                             <SlotTape items={labels} activeIndex={activeIndex}/>
                         </div>
                     </div>
-
                     <button
                         type="button"
                         onClick={nextRole}
                         aria-label="Next role"
-                        className="select-none rounded-full border border-foreground/30 px-6 py-4 text-[6vw] md:text-[56px] uppercase tracking-[0.10em] opacity-80 hover:opacity-100 font-pixel leading-none"
+                        className="align-middle select-none rounded-full border border-foreground/30 px-6 py-4 text-[6vw] md:text-[56px] uppercase tracking-[0.10em] opacity-80 hover:opacity-100 font-pixel leading-none"
                     >
                         →
                     </button>

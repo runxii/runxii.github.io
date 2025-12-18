@@ -5,8 +5,8 @@ import { useRoleStore } from "@/store/roleStore";
 import type { RoleKey } from "@/types/role";
 import { cn } from "@/lib/cn";
 
-import { GlassButton } from '@/components/ui/GlassButton';
-import { Sparkles } from 'lucide-react';
+/*import { GlassButton } from '@/components/ui/GlassButton';
+import { Sparkles } from 'lucide-react';*/
 
 export function WorkFilters() {
     const role = useRoleStore((s) => s.role);
@@ -15,8 +15,10 @@ export function WorkFilters() {
     return (
         <div className="flex flex-wrap items-center gap-3">
             {ROLE_ORDER.map((k) => {
+                const active = k === role;
+
                 return (
-                    <GlassButton
+                    /*<GlassButton
                         key={k}
                         type="button"
                         onClick={() => setRole(k)}
@@ -24,8 +26,9 @@ export function WorkFilters() {
                         size="default"
                     >
                         {ROLES[k].label}
-                    </GlassButton>
-                    /*<button
+                    </GlassButton>*/
+
+                    <button
                         key={k}
                         type="button"
                         onClick={() => setRole(k as RoleKey)}
@@ -35,7 +38,7 @@ export function WorkFilters() {
                         )}
                     >
                         {ROLES[k].label}
-                    </button>*/
+                    </button>
                 );
             })}
         </div>

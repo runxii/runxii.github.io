@@ -1,4 +1,5 @@
 import { TypewriterName } from "@/components/ui/TypewriterName";
+
 export function StartSection() {
     return (
         <section id="start" className="relative min-h-dvh px-6">

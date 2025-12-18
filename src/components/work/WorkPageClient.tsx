@@ -15,10 +15,10 @@ export function WorkPageClient() {
         <section className="relative px-6 pt-24 pb-44">
             <div className="mx-auto max-w-6xl">
                 <div>
-                    <p className="text-xs font-medium uppercase tracking-[0.18em] opacity-70">
+                    {/*<p className="text-xs font-medium uppercase tracking-[0.18em] opacity-70">
                         Work
-                    </p>
-                    <h1 className="mt-20 text-5xl font-serif font-extrabold tracking-[-0.04em] md:text-7xl">
+                    </p>*/}
+                    <h1 className="mt-30 text-5xl font-serif font-extrabold tracking-[-0.04em] md:text-7xl">
                         Selected projects
                     </h1>
                     <p className="my-3 text-sm opacity-40">

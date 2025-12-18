@@ -1,5 +1,5 @@
 import type { Project } from "@/types/project";
-import { useEffect, useRef, useState, useCallback } from 'react';
+import { useEffect, useRef, useState} from 'react';
 
 export function ProjectCard({ project }: { project: Project }) {
     const [blurStrength, setBlurStrength] = useState(90);
