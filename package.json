@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "export": "next export",
+    "predeploy": "node -e \"require('fs').writeFileSync('out/CNAME','yangxii.work\\n')\" && node -e \"require('fs').writeFileSync('out/.nojekyll','')\"",
     "deploy": "gh-pages -d out -b main -r https://github.com/runxii/runxii.github.io.git --dotfiles"
   },
   "dependencies": {
