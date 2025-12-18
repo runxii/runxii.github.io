@@ -22,7 +22,6 @@ module.exports = {
         fontFamily: {
             sans: ['Graphik', 'sans-serif'],
             serif: ['ui-serif', 'Georgia',"Times New Roman" ,'serif'],
-            mono: ['Monaco', 'monospace'],
         },
         extend: {
             spacing: {
