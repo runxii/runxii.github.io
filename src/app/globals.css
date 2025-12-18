@@ -24,7 +24,7 @@ html, body { height: 100%; }
 
 body {
   background: rgb(var(--bg));
-  color: rgb(var(--fg));
+  /*color: rgb(var(--fg));*/
   /*font-family: var(--font-sans), serif;*/
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
@@ -36,7 +36,6 @@ h2 {
 }
 
 a {
-  color: inherit;
   font-family: inherit;
   text-decoration: none;
 }

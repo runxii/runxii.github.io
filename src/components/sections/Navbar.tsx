@@ -8,8 +8,7 @@ export function Navbar() {
                     <a
                         key={item.key}
                         href={item.href}
-                        className="opacity-70 hover:opacity-100 font-normal hover:font-bold transition-all duration-200 ease-in-out"
-                    >
+                        className="text-white hover:text-green-600 opacity-70 hover:opacity-100 font-normal hover:font-bold transition-all duration-200 ease-in-out">
                         {item.label}
                     </a>
                 ))}

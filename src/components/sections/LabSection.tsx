@@ -16,7 +16,7 @@ export function LabSection() {
                             href={x.href}
                             className="rounded-3xl border border-white/12 bg-black/35 p-7 backdrop-blur-md hover:bg-white/5 transition"
                         >
-                            <div className="text-xl font-semibold">{x.title}</div>
+                            <div className="text-xl font-serif font-semibold">{x.title}</div>
                             <div className="mt-2 text-sm opacity-75">{x.note}</div>
                         </a>
                     ))}

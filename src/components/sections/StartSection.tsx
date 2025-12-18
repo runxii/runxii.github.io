@@ -11,8 +11,6 @@ export function StartSection() {
                         <br/>
                         And I work as a…
                     </h1>
-
-                    {/*<IdentitySwitch/>*/}
                 </div>
             </div>
         </section>
