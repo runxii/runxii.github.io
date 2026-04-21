@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @tailwind base;
 @tailwind components;
@@ -8,19 +8,21 @@
   --bg: 0 0 0;
   --fg: 255 255 255;
 
-  --grain-opacity: 0.10;
+  --grain-opacity: 0.1;
 
   --container: 72rem; /* 1152px */
   --gutter: 24px;
   --section-pad-y: 40px;
 
-  --font-serif: ui-serif, Georgia, "Times New Roman", serif;
+  --font-serif: ui-serif, Georgia, 'Times New Roman', serif;
   --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont;
-  --font-mono: "Roboto Mono", Consolas, "Liberation Mono", Menlo, monospace;
-
+  --font-mono: 'Roboto Mono', Consolas, 'Liberation Mono', Menlo, monospace;
 }
 
-html, body { height: 100%; }
+html,
+body {
+  height: 100%;
+}
 
 body {
   background: rgb(var(--bg));
@@ -44,17 +46,19 @@ a {
   background: rgba(255, 255, 255, 0.2);
 }
 
-.vignette { position: relative; }
+.vignette {
+  position: relative;
+}
 .vignette::after {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   pointer-events: none;
   background: radial-gradient(
-          1200px 700px at 50% 20%,
-          transparent 0%,
-          rgba(0,0,0,0.55) 70%,
-          rgba(0,0,0,0.85) 100%
+    1200px 700px at 50% 20%,
+    transparent 0%,
+    rgba(0, 0, 0, 0.55) 70%,
+    rgba(0, 0, 0, 0.85) 100%
   );
 }
 
@@ -106,11 +110,15 @@ a {
 
   color: rgba(255, 255, 255, 0.82);
 
-  transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease, color 180ms ease;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    color 180ms ease;
 }
 
 .work-pill::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   border-radius: 9999px;
@@ -122,9 +130,9 @@ a {
 
 .work-pill:hover {
   background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.20);
+  border-color: rgba(255, 255, 255, 0.2);
   color: rgba(255, 255, 255, 0.92);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.60);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
 }
 
 .work-pill--active {

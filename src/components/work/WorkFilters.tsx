@@ -1,24 +1,24 @@
-"use client";
+'use client'
 
-import { ROLE_ORDER, ROLES } from "@/data/roles";
-import { useRoleStore } from "@/store/roleStore";
-import type { RoleKey } from "@/types/role";
-import { cn } from "@/lib/cn";
+import type { RoleKey } from '@/types/role'
+import { ROLE_ORDER, ROLES } from '@/data/roles'
+import { cn } from '@/lib/cn'
+import { useRoleStore } from '@/store/roleStore'
 
-/*import { GlassButton } from '@/components/ui/GlassButton';
-import { Sparkles } from 'lucide-react';*/
+/* import { GlassButton } from '@/components/ui/GlassButton';
+import { Sparkles } from 'lucide-react'; */
 
 export function WorkFilters() {
-    const role = useRoleStore((s) => s.role);
-    const setRole = useRoleStore((s) => s.setRole);
+  const role = useRoleStore(s => s.role)
+  const setRole = useRoleStore(s => s.setRole)
 
-    return (
-        <div className="flex flex-wrap items-center gap-3">
-            {ROLE_ORDER.map((k) => {
-                const active = k === role;
+  return (
+    <div className="flex flex-wrap items-center gap-3">
+      {ROLE_ORDER.map((k) => {
+        const active = k === role
 
-                return (
-                    /*<GlassButton
+        return (
+        /* <GlassButton
                         key={k}
                         type="button"
                         onClick={() => setRole(k)}
@@ -26,21 +26,21 @@ export function WorkFilters() {
                         size="default"
                     >
                         {ROLES[k].label}
-                    </GlassButton>*/
+                    </GlassButton> */
 
-                    <button
-                        key={k}
-                        type="button"
-                        onClick={() => setRole(k as RoleKey)}
-                        className={cn(
-                            "work-pill tracking-[-0.04em] text-sm tracking-wide flex-1 min-w-[180px]",
-                            active && "work-pill--active"
-                        )}
-                    >
-                        {ROLES[k].label}
-                    </button>
-                );
-            })}
-        </div>
-    );
+          <button
+            key={k}
+            type="button"
+            onClick={() => setRole(k as RoleKey)}
+            className={cn(
+              'work-pill tracking-[-0.04em] text-sm tracking-wide flex-1 min-w-[180px]',
+              active && 'work-pill--active',
+            )}
+          >
+            {ROLES[k].label}
+          </button>
+        )
+      })}
+    </div>
+  )
 }

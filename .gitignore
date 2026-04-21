@@ -9,7 +9,8 @@ out/
 # idea IDE
 .idea/
 
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# lint test
+lint-reports/
 
 # dependencies
 /node_modules
