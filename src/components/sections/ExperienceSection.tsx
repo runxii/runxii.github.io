@@ -1,14 +1,14 @@
-import type { Locale } from "@/types/i18n";
-import type { ExperienceItem } from "@/types/experience";
-import Container from "@/components/layout/Container";
-import SectionTitle from "@/components/ui/SectionTitle";
-import ExperienceTimeline from "@/components/work/ExperienceTimeline";
+import type { ExperienceItem } from '@/types/experience'
+import type { Locale } from '@/types/i18n'
+import Container from '@/components/layout/Container'
+import SectionTitle from '@/components/ui/SectionTitle'
+import ExperienceTimeline from '@/components/work/ExperienceTimeline'
 
-type ExperienceSectionProps = {
-  title: string;
-  items: ExperienceItem[];
-  locale: Locale;
-};
+interface ExperienceSectionProps {
+  title: string
+  items: ExperienceItem[]
+  locale: Locale
+}
 
 export default function ExperienceSection({
   title,
@@ -22,5 +22,5 @@ export default function ExperienceSection({
         <ExperienceTimeline items={items} locale={locale} />
       </Container>
     </section>
-  );
+  )
 }

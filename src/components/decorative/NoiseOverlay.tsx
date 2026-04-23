@@ -1,21 +1,40 @@
-type NoiseOverlayProps = {
-  className?: string;
-};
+import { useId } from 'react'
 
-export default function NoiseOverlay({ className = "" }: NoiseOverlayProps) {
+interface NoiseOverlayProps {
+  filterId?: string
+}
+
+export default function NoiseOverlay({ filterId }: NoiseOverlayProps) {
+  const generatedId = useId()
+  const id = filterId || generatedId
+
   return (
-    <div
+    <svg
+      className="pointer-events-none absolute h-0 w-0"
       aria-hidden="true"
-      className={`pointer-events-none absolute inset-0 opacity-[0.16] mix-blend-soft-light ${className}`}
-      style={{
-        backgroundImage: `
-          radial-gradient(circle at 20% 20%, rgba(255,255,255,0.22) 0 1px, transparent 1.5px),
-          radial-gradient(circle at 80% 30%, rgba(255,255,255,0.16) 0 1px, transparent 1.5px),
-          radial-gradient(circle at 40% 70%, rgba(0,0,0,0.14) 0 1px, transparent 1.5px),
-          radial-gradient(circle at 70% 80%, rgba(255,255,255,0.14) 0 1px, transparent 1.5px)
-        `,
-        backgroundSize: "18px 18px, 22px 22px, 16px 16px, 20px 20px",
-      }}
-    />
-  );
+    >
+      <defs>
+        <filter id={id}>
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.4"
+            numOctaves="3"
+            stitchTiles="stitch"
+            result="noiseOut"
+          />
+          <feColorMatrix
+            type="saturate"
+            values="0"
+            in="noiseOut"
+            result="desaturatedNoise"
+          />
+          <feBlend
+            in="SourceGraphic"
+            in2="desaturatedNoise"
+            mode="overlay"
+          />
+        </filter>
+      </defs>
+    </svg>
+  )
 }

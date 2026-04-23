@@ -1,15 +1,23 @@
-type DottedBandProps = {
-  className?: string;
-};
+interface WaveLineProps {
+  className?: string
+}
 
-export default function DottedBand({ className = "" }: DottedBandProps) {
+export default function WaveLine({ className = '' }: WaveLineProps) {
   return (
-    <div aria-hidden="true" className={`relative ${className}`}>
-      <div className="flex flex-col gap-2">
-        <div className="h-3 rounded-full bg-[radial-gradient(circle,_rgba(115,217,228,0.95)_2.5px,_transparent_3px)] bg-[length:14px_14px] bg-repeat-x" />
-        <div className="h-3 rounded-full bg-[radial-gradient(circle,_rgba(115,217,228,0.9)_2.5px,_transparent_3px)] bg-[length:14px_14px] bg-repeat-x opacity-90" />
-        <div className="h-3 rounded-full bg-[radial-gradient(circle,_rgba(115,217,228,0.82)_2.5px,_transparent_3px)] bg-[length:14px_14px] bg-repeat-x opacity-80" />
-      </div>
+    <div aria-hidden="true" className={`w-full overflow-hidden ${className}`}>
+      <svg
+        viewBox="0 0 1200 80"
+        className="h-14 w-full"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M0,42 C80,0 140,84 220,42 C300,-4 360,84 440,44 C520,4 580,84 660,42 C740,-2 800,84 880,43 C960,-6 1040,84 1120,40 C1160,10 1180,50 1200,34"
+          fill="none"
+          stroke="rgba(20,20,20,0.92)"
+          strokeWidth="5"
+          strokeLinecap="round"
+        />
+      </svg>
     </div>
-  );
+  )
 }

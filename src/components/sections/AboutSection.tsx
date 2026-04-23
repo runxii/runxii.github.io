@@ -1,32 +1,40 @@
-import type { Locale } from "@/types/i18n";
-import type { Profile } from "@/types/profile";
-import Container from "@/components/layout/Container";
-import SectionTitle from "@/components/ui/SectionTitle";
-import DottedBand from "@/components/decorative/DottedBand";
-import WaveLine from "@/components/decorative/WaveLine";
+import type { Locale } from '@/types/i18n'
+import type { Profile } from '@/types/profile'
+import DottedBand from '@/components/decorative/DottedBand'
+import WaveLine from '@/components/decorative/WaveLine'
+import Container from '@/components/layout/Container'
+import SectionTitle from '@/components/ui/SectionTitle'
 
-type AboutSectionProps = {
-  profile: Profile;
-  locale: Locale;
-};
+interface AboutSectionProps {
+  profile: Profile
+  locale: Locale
+}
 
 export default function AboutSection({ profile, locale }: AboutSectionProps) {
   return (
-    <section id="about" className="py-14 md:py-20">
+    <section id="about" className="relative py-14 md:py-20">
+      <div className="absolute inset-x-0 top-[52%] -translate-y-1">
+
+        <DottedBand className="absolute inset-0 z-0" />
+        <WaveLine className="relative z-10 translate-y-[180px]" />
+      </div>
       <Container>
         <SectionTitle title={profile.aboutTitle[locale]} />
-
-        <div className="mx-auto max-w-[760px] rounded-[2px] bg-[linear-gradient(to_bottom,rgba(101,17,17,0.95)_0%,rgba(137,28,28,0.92)_34%,rgba(176,38,38,0.72)_62%,rgba(236,236,236,0.9)_100%)] px-8 py-14 shadow-[0_18px_42px_rgba(0,0,0,0.14)] md:px-10 md:py-16">
-          <p className="font-portfolio-mono max-w-[500px] text-[12px] leading-7 text-white/95">
-            {profile.aboutText[locale]}
-          </p>
-        </div>
-
-        <div className="mt-10">
-          <DottedBand />
-          <WaveLine className="-mt-2" />
+        <div className="relative mx-auto h-[520px] w-80%">
+          <div
+            className="absolute inset-0 z-0"
+            style={{
+              background: 'linear-gradient(to bottom, #5B0E0E 0%, #8A2525 40%, #D48080 75%, #F5EAE6 100%)',
+              filter: `blur(14px)`,
+            }}
+          />
+          <div className="relative z-10 flex h-full flex-col items-center justify-center px-8 text-center">
+            <p className="font-portfolio-mono text-[16px] leading-7 text-white">
+              {profile.aboutText[locale]}
+            </p>
+          </div>
         </div>
       </Container>
     </section>
-  );
+  )
 }

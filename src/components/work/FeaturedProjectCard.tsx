@@ -1,26 +1,23 @@
-import Link from "next/link";
-import type { Locale } from "@/types/i18n";
-import type { Project } from "@/types/project";
-import TechBadge from "@/components/ui/TechBadge";
-import BlurGlow from "@/components/decorative/BlurGlow";
+import type { Locale } from '@/types/i18n'
+import type { Project } from '@/types/project'
+import Link from 'next/link'
+import TechBadge from '@/components/ui/TechBadge'
 
-type FeaturedProjectCardProps = {
-  project: Project;
-  locale: Locale;
-  allProjectsCount?: number;
-  activeIndex?: number;
-};
+interface FeaturedProjectCardProps {
+  project: Project
+  projects: Project[]
+  locale: Locale
+  activeIndex?: number
+}
 
 export default function FeaturedProjectCard({
   project,
+  projects,
   locale,
-  allProjectsCount = 4,
   activeIndex = 0,
 }: FeaturedProjectCardProps) {
   return (
     <div className="relative">
-      <BlurGlow className="-left-[110px] top-[10px] h-[260px] w-[260px] opacity-85" />
-
       <div className="relative grid items-start gap-8 md:grid-cols-[140px_1fr_220px]">
         <div className="relative flex items-center justify-center pt-6">
           <div className="relative flex h-[92px] w-[92px] items-center justify-center rounded-full border border-cyan-100 bg-cyan-200/95 text-center text-[16px] text-neutral-900 shadow-[0_10px_28px_rgba(0,0,0,0.08)]">
@@ -34,14 +31,16 @@ export default function FeaturedProjectCard({
             {project.title[locale]}
           </h3>
 
-          {project.subtitle ? (
-            <p className="font-portfolio-sans mt-2 text-[12px] italic text-neutral-500">
-              {project.subtitle[locale]}
-            </p>
-          ) : null}
+          {project.subtitle
+            ? (
+                <p className="font-portfolio-sans mt-2 text-[12px] italic text-neutral-500">
+                  {project.subtitle[locale]}
+                </p>
+              )
+            : null}
 
           <div className="mt-4 flex flex-wrap gap-2">
-            {project.stack.map((item) => (
+            {project.stack.map(item => (
               <TechBadge key={item} label={item} />
             ))}
           </div>
@@ -51,7 +50,7 @@ export default function FeaturedProjectCard({
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3">
-            {project.links.map((link) => (
+            {project.links.map(link => (
               <Link
                 key={`${project.slug}-${link.href}`}
                 href={link.href}
@@ -78,32 +77,32 @@ export default function FeaturedProjectCard({
 
           <div className="font-portfolio-mono mt-3 flex items-center justify-between text-[10px] uppercase tracking-[0.08em] text-neutral-400">
             <span>project reel</span>
-            <span>{String(activeIndex + 1).padStart(2, "0")}</span>
+            <span>{String(activeIndex + 1).padStart(2, '0')}</span>
           </div>
         </div>
       </div>
 
       <div className="mt-7 flex items-center justify-center gap-3">
-        {Array.from({ length: allProjectsCount }).map((_, index) => {
-          const active = index === activeIndex;
+        {projects.map((item, index) => {
+          const active = index === activeIndex
 
           return (
             <button
-              key={index}
+              key={item.slug}
               type="button"
-              aria-label={`Project ${index + 1}`}
+              aria-label={`Project ${index + 1}: ${item.title[locale]}`}
               className={[
-                "group relative h-5 w-5 rounded-full border transition",
+                'group relative h-5 w-5 rounded-full border transition',
                 active
-                  ? "border-cyan-100 bg-cyan-300 shadow-[0_0_0_4px_rgba(186,230,253,0.45)]"
-                  : "border-cyan-200 bg-cyan-200 hover:bg-cyan-300",
-              ].join(" ")}
+                  ? 'border-cyan-100 bg-cyan-300 shadow-[0_0_0_4px_rgba(186,230,253,0.45)]'
+                  : 'border-cyan-200 bg-cyan-200 hover:bg-cyan-300',
+              ].join(' ')}
             >
               <span className="absolute inset-[5px] rounded-full border border-white/45" />
             </button>
-          );
+          )
         })}
       </div>
     </div>
-  );
+  )
 }
