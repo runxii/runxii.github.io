@@ -1,18 +1,15 @@
-export const SITE = {
-  name: 'Yang Liu',
-  title: 'Yang Portfolio',
-  description: 'Portfolio of Yang (SDE / Security / PM / Design).',
-  links: {
-    email: 'liuy42@tcd.ie',
-    github: 'https://github.com/runxii',
-    linkedin: 'https://www.linkedin.com/in/yangxii',
-  },
-} as const
+import type { Locale } from "@/types/i18n";
 
-export const NAV = [
-  { key: 'start', label: 'Start/> ', href: '/#start' },
-  { key: 'work', label: 'work/> ', href: '/#work' },
-  { key: 'lab', label: 'Lab/> ', href: '/#lab' },
-  { key: 'about', label: 'About/> ', href: '/#about' },
-  { key: 'contact', label: 'Contact/> ', href: '/#contact' },
-] as const
+export const siteConfig = {
+  name: "Yang Portfolio",
+  title: 'Yang=XII',
+  baseUrl: "http://localhost:3000",
+  defaultTitle: {
+    en: "Yang | Web Developer · Software Engineer",
+    zh: "Yang | 网页开发·软件工程",
+  } satisfies Record<Locale, string>,
+  defaultDescription: {
+    en: "Personal portfolio for projects, labs, experience, and blogs.",
+    zh: "个人作品集，展示项目、实验、工作经历与博客。",
+  } satisfies Record<Locale, string>,
+};

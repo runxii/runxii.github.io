@@ -1,15 +1,17 @@
-import type { RoleKey } from '@/types/role'
+import type { Locale } from "@/types/i18n";
 
-export interface ProjectLink { label: string, href: string }
+export type ProjectLink = {
+  label: Record<Locale, string>;
+  href: string;
+};
 
-export interface Project {
-  slug: string
-  title: string
-  year: string
-  summary: string
-  previewImage?: string
-  tags: string[]
-  roles: RoleKey[]
-  featuredFor?: RoleKey[]
-  links?: ProjectLink[]
-}
+export type Project = {
+  slug: string;
+  title: Record<Locale, string>;
+  subtitle?: Record<Locale, string>;
+  description: Record<Locale, string>;
+  stack: string[];
+  image: string;
+  links: ProjectLink[];
+  featured?: boolean;
+};

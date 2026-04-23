@@ -14,7 +14,7 @@ import { experience } from "@/data/experience";
 import { socialLinks } from "@/data/social";
 import { getLocalizedNav } from "@/lib/portfolio";
 
-const locale = "en" as const;
+const locale = "zh" as const;
 
 export const metadata: Metadata = {
   title: siteConfig.defaultTitle[locale],
