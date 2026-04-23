@@ -1,79 +1,32 @@
-export function AboutSection() {
-  return (
-    <section id="about" className="relative">
-      <div className="container-brutal py-[var(--section-pad-y)]">
-        <p className="section-label">About</p>
-        <h2 className="mt-4 text-4xl font-extrabold tracking-[-0.04em] md:text-6xl">
-          A bit about me
-        </h2>
+import type { Locale } from "@/types/i18n";
+import type { Profile } from "@/types/profile";
+import Container from "@/components/layout/Container";
+import SectionTitle from "@/components/ui/SectionTitle";
+import DottedBand from "@/components/decorative/DottedBand";
+import WaveLine from "@/components/decorative/WaveLine";
 
-        <div className="mt-10 rounded-3xl border border-white/12 bg-black/40 p-5 sm:p-7 backdrop-blur-md shadow-[0_20px_80px_rgba(0,0,0,0.35)]">
-          <pre className="overflow-x-auto whitespace-pre text-[13px] sm:text-sm leading-6">
-            <code className="font-mono text-white/85">
-              <span className="text-green-500">class</span>
-              {' '}
-              <span className="text-sky-300">Yang</span>
-              {' '}
-              {'{\n'}
-              {'  '}
-              <span className="text-sky-300">roles</span>
-              {' '}
-              <span className="text-white/60">=</span>
-              {' '}
-              <span className="text-white/85">[</span>
-              <span className="text-amber-200">"SDE"</span>
-              <span className="text-white/60">, </span>
-              <span className="text-amber-200">"Security"</span>
-              <span className="text-white/60">, </span>
-              <span className="text-amber-200">"PM"</span>
-              <span className="text-white/60">, </span>
-              <span className="text-amber-200">"Design"</span>
-              <span className="text-white/85">];</span>
-              {'\n\n'}
-              {'  '}
-              <span className="text-sky-300">focus</span>
-              <span className="text-white/85">()</span>
-              {' '}
-              {'{ '}
-              <span className="text-green-500">return</span>
-              {' '}
-              <span className="text-amber-200">"Build reliable systems and ship real products."</span>
-              <span className="text-white/85">
-                ;
-                {'}'}
-              </span>
-              {'\n\n'}
-              {'  '}
-              <span className="text-sky-300">education</span>
-              {' '}
-              <span className="text-white/60">=</span>
-              {' '}
-              <span className="text-white/85">[</span>
-              {'\n    '}
-              <span className="text-white/85">[</span>
-              <span className="text-amber-200">"M.Sc, Interactive Digital Media"</span>
-              <span className="text-white/60">, </span>
-              <span className="text-amber-200">"Trinity College Dublin"</span>
-              <span className="text-white/60">, </span>
-              <span className="text-amber-200">"2024–2025"</span>
-              <span className="text-white/85">],</span>
-              {'\n    '}
-              <span className="text-white/85">[</span>
-              <span className="text-amber-200">"B.Eng, Information Security"</span>
-              <span className="text-white/60">, </span>
-              <span className="text-amber-200">"Nankai University"</span>
-              <span className="text-white/60">, </span>
-              <span className="text-amber-200">"2020–2024"</span>
-              <span className="text-white/85">]</span>
-              {'\n  '}
-              <span className="text-white/85">];</span>
-              {'\n'}
-              {'}'}
-            </code>
-          </pre>
+type AboutSectionProps = {
+  profile: Profile;
+  locale: Locale;
+};
+
+export default function AboutSection({ profile, locale }: AboutSectionProps) {
+  return (
+    <section id="about" className="py-14 md:py-20">
+      <Container>
+        <SectionTitle title={profile.aboutTitle[locale]} />
+
+        <div className="mx-auto max-w-[760px] rounded-[2px] bg-[linear-gradient(to_bottom,rgba(101,17,17,0.95)_0%,rgba(137,28,28,0.92)_34%,rgba(176,38,38,0.72)_62%,rgba(236,236,236,0.9)_100%)] px-8 py-14 shadow-[0_18px_42px_rgba(0,0,0,0.14)] md:px-10 md:py-16">
+          <p className="font-portfolio-mono max-w-[500px] text-[12px] leading-7 text-white/95">
+            {profile.aboutText[locale]}
+          </p>
         </div>
 
-      </div>
+        <div className="mt-10">
+          <DottedBand />
+          <WaveLine className="-mt-2" />
+        </div>
+      </Container>
     </section>
-  )
+  );
 }

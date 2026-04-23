@@ -1,0 +1,26 @@
+import type { Locale } from "@/types/i18n";
+import type { ExperienceItem } from "@/types/experience";
+import Container from "@/components/layout/Container";
+import SectionTitle from "@/components/ui/SectionTitle";
+import ExperienceTimeline from "@/components/work/ExperienceTimeline";
+
+type ExperienceSectionProps = {
+  title: string;
+  items: ExperienceItem[];
+  locale: Locale;
+};
+
+export default function ExperienceSection({
+  title,
+  items,
+  locale,
+}: ExperienceSectionProps) {
+  return (
+    <section id="experience" className="py-14 md:py-20">
+      <Container>
+        <SectionTitle title={title} />
+        <ExperienceTimeline items={items} locale={locale} />
+      </Container>
+    </section>
+  );
+}
