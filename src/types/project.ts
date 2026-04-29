@@ -12,6 +12,6 @@ export interface Project {
   description: Record<Locale, string>
   stack: string[]
   image: string
-  links: ProjectLink[]
+  link: ProjectLink
   featured?: boolean
 }

@@ -1,8 +1,8 @@
 import type { Locale } from '@/types/i18n'
 import type { Project } from '@/types/project'
+import LabCard from '@/components/card/LabCard'
 import Container from '@/components/layout/Container'
 import SectionTitle from '@/components/ui/SectionTitle'
-import LabCard from '@/components/work/LabCard'
 
 interface LabsSectionProps {
   title: string
@@ -19,7 +19,7 @@ export default function LabsSection({
     <section className="py-14 md:py-20">
       <Container>
         <SectionTitle title={title} />
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-3">
           {items.map(item => (
             <LabCard key={item.slug} project={item} locale={locale} />
           ))}

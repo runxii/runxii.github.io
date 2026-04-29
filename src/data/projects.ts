@@ -16,18 +16,13 @@ export const projects: Project[] = [
       zh: '一个基于 Python、PostgreSQL 与 OpenAI API 的求职系统，通过结构化评估、去重与轻量化流程设计，降低人工筛选成本。',
     },
     stack: ['Python', 'SQL', 'LLM', 'Flask', 'Agent'],
-    image: '/data/img/job-job-radar.png',
+    image: '/images/projects/job-radar.png',
     featured: true,
-    links: [
+    link:
       {
-        label: { en: 'GitHub', zh: 'GitHub' },
+        label: { en: 'github', zh: 'github' },
         href: 'https://github.com/runxii/job-radar',
       },
-      {
-        label: { en: 'Read More', zh: '了解更多' },
-        href: '/work',
-      },
-    ],
   },
   {
     slug: 'habichew',
@@ -44,18 +39,13 @@ export const projects: Project[] = [
       zh: '一个基于 Python、PostgreSQL 与 OpenAI API 的求职系统，通过结构化评估、去重与轻量化流程设计，降低人工筛选成本。',
     },
     stack: ['Nodejs', 'React Native', 'Android', 'iOS', 'RESTful API'],
-    image: '/data/img/habichew.png',
+    image: '/images/projects/habichew.png',
     featured: true,
-    links: [
+    link:
       {
-        label: { en: 'GitHub', zh: 'GitHub' },
+        label: { en: 'github', zh: 'github' },
         href: 'https://github.com/Habichew/app',
       },
-      {
-        label: { en: 'Read More', zh: '了解更多' },
-        href: '/work',
-      },
-    ],
   },
   {
     slug: 'portfolio',
@@ -72,7 +62,11 @@ export const projects: Project[] = [
       zh: '用于作品集网格展示的精简项目卡片。',
     },
     stack: ['Next.js', 'Tailwind CSS'],
-    image: '/data/img/portfolio.png',
-    links: [{ label: { en: 'View', zh: '查看' }, href: '/' }],
+    image: '/images/projects/portfolio.png',
+    link:
+      {
+        label: { en: 'github', zh: 'github' },
+        href: 'https://github.com/Habichew/app',
+      },
   },
 ]

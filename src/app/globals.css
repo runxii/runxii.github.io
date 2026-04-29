@@ -33,7 +33,7 @@ body {
 }
 
 .font-portfolio-mono {
-  font-family: var(--font-mono), var(--font-sans-zh), monospace;
+  font-family: var(--font-mono), var(--font-serif-zh), monospace;
 }
 
 @keyframes dotband-scroll {

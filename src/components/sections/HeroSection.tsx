@@ -1,9 +1,9 @@
 import type { Locale } from '@/types/i18n'
 import type { Profile } from '@/types/profile'
-import DottedBand from '@/components/decorative/DottedBand'
-import WaveLine from '@/components/decorative/WaveLine'
-import HeroCard from '@/components/identity/HeroCard'
+import HeroCard from '@/components/card/HeroCard'
 import Container from '@/components/layout/Container'
+import DottedBand from '@/components/ui/DottedBand'
+import WaveLine from '@/components/ui/WaveLine'
 
 interface HeroSectionProps {
   profile: Profile

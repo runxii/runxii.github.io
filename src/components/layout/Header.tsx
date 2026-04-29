@@ -1,5 +1,8 @@
+'use client'
+
 import type { Locale } from '@/types/i18n'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { getAlternateLocale, localizePath } from '@/lib/i18n'
 
 interface HeaderProps {
@@ -12,9 +15,29 @@ interface HeaderProps {
   }>
 }
 
+function getAlternatePath(pathname: string, currentLocale: Locale, nextLocale: Locale) {
+  if (!pathname) {
+    return `/${nextLocale}`
+  }
+
+  const currentPrefix = `/${currentLocale}`
+  const nextPrefix = `/${nextLocale}`
+
+  if (pathname === currentPrefix) {
+    return nextPrefix
+  }
+
+  if (pathname.startsWith(`${currentPrefix}/`)) {
+    return pathname.replace(currentPrefix, nextPrefix)
+  }
+
+  return nextPrefix
+}
+
 export default function Header({ locale, navItems }: HeaderProps) {
+  const pathname = usePathname()
   const altLocale = getAlternateLocale(locale)
-  const altHref = `/${altLocale}`
+  const altHref = getAlternatePath(pathname, locale, altLocale)
 
   return (
     <header className="sticky top-0 z-30 w-full">
@@ -22,8 +45,9 @@ export default function Header({ locale, navItems }: HeaderProps) {
         <nav className="font-portfolio-mono flex items-center gap-5 text-[14px] tracking-[0.06em] text-neutral-900 md:gap-9">
           {navItems.map((item) => {
             const href
-              = item.type === 'route' ? localizePath(locale, item.href) : item.href
-
+              = item.type === 'route'
+                ? localizePath(locale, item.href)
+                : `/${locale}${item.href}`
             return (
               <Link
                 key={item.key}

@@ -1,9 +1,9 @@
 import type { Locale } from '@/types/i18n'
 import type { Profile } from '@/types/profile'
-import DottedBand from '@/components/decorative/DottedBand'
-import WaveLine from '@/components/decorative/WaveLine'
 import Container from '@/components/layout/Container'
+import DottedBand from '@/components/ui/DottedBand'
 import SectionTitle from '@/components/ui/SectionTitle'
+import WaveLine from '@/components/ui/WaveLine'
 
 interface AboutSectionProps {
   profile: Profile

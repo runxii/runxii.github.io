@@ -1,8 +1,8 @@
 import type { ExperienceItem } from '@/types/experience'
 import type { Locale } from '@/types/i18n'
+import ExperienceTimeline from '@/components/card/ExperienceTimeline'
 import Container from '@/components/layout/Container'
 import SectionTitle from '@/components/ui/SectionTitle'
-import ExperienceTimeline from '@/components/work/ExperienceTimeline'
 
 interface ExperienceSectionProps {
   title: string

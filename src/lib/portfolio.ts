@@ -2,7 +2,7 @@ import type { Locale } from '@/types/i18n'
 import type { NavItem } from '@/types/nav'
 import type { Project } from '@/types/project'
 import { navigation } from '@/config/navigation'
-import { labs } from '@/data/labs'
+// import { labs } from '@/data/labs'
 import { projects } from '@/data/projects'
 
 export function getLocalizedNav(locale: Locale): Array<{
@@ -26,7 +26,7 @@ export function getFeaturedProjects(allProjects: Project[]): Project[] {
 export function getHeroProject(): Project | null {
   return getFeaturedProjects(projects)[0] ?? null
 }
-
-export function getLabProjects(): Project[] {
-  return labs
-}
+//
+// export function getLabProjects(): Project[] {
+//   return labs
+// }

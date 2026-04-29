@@ -10,7 +10,7 @@ export default function HeroCard({
   intro,
 }: HeroCardProps) {
   return (
-    <div className="relative mx-auto h-[540px] w-80% top-10">
+    <div className="relative mx-auto h-[540px] w-80% top-5">
 
       <div
         className="absolute inset-0 z-0"

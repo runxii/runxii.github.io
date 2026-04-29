@@ -7,10 +7,10 @@ import AboutSection from '@/components/sections/AboutSection'
 import ExperienceSection from '@/components/sections/ExperienceSection'
 import HeroSection from '@/components/sections/HeroSection'
 import LabsSection from '@/components/sections/LabsSection'
-import ProjectsSection from '@/components/sections/ProjectsSection'
+// import ProjectsSection from '@/components/sections/ProjectsSection'
 import { siteConfig } from '@/config/site'
 import { experience } from '@/data/experience'
-import { labs } from '@/data/labs'
+// import { labs } from '@/data/labs'
 import { profile } from '@/data/profile'
 import { projects } from '@/data/projects'
 import { sectionLabels } from '@/data/sectionLabels'
@@ -55,14 +55,14 @@ export default async function LocaleHomePage({
 
       <main>
         <HeroSection profile={profile} locale={typedLocale} />
-        <ProjectsSection
-          title={sectionLabels.projects[typedLocale]}
-          projects={projects}
-          locale={typedLocale}
-        />
+        {/* <ProjectsSection */}
+        {/*  title={sectionLabels.projects[typedLocale]} */}
+        {/*  projects={projects} */}
+        {/*  locale={typedLocale} */}
+        {/* /> */}
         <LabsSection
-          title={sectionLabels.labs[typedLocale]}
-          items={labs}
+          title={sectionLabels.projects[typedLocale]}
+          items={projects}
           locale={typedLocale}
         />
         <ExperienceSection

@@ -16,7 +16,7 @@ export default function SectionTitle({
           {title}
         </h2>
         <div
-          className="mx-auto mt-4 h-3 w-[220px] bg-[radial-gradient(circle,_rgba(115,217,228,0.95)_2.5px,_transparent_3px)] bg-[length:14px_14px] bg-repeat-x"
+          className="mx-auto mt-4 h-3 w-[220px] bg-[radial-gradient(circle,_rgba(185,227,225)_5px,_transparent_3px)] bg-[length:18px_14px] bg-repeat-x"
         />
         <div
           aria-hidden="true"
