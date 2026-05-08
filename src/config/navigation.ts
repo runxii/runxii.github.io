@@ -15,7 +15,7 @@ export const navigation: NavItem[] = [
   },
   {
     key: 'work',
-    label: { en: 'work', zh: '工作' },
+    label: { en: 'work', zh: '作品' },
     href: '/work',
     type: 'route',
   },

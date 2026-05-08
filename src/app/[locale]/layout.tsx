@@ -29,13 +29,13 @@ const notoSans = Noto_Sans({
 
 const notoSansSC = Noto_Sans_SC({
   subsets: ['latin'],
-  weight: ['500'],
+  weight: ['400'],
   variable: '--font-sans-zh',
 })
 
 const notoSerifSc = Noto_Serif_SC({
   subsets: ['latin'],
-  weight: ['900'],
+  weight: ['800'],
   variable: '--font-serif-zh',
 })
 

@@ -80,7 +80,7 @@ export default function LabCard({ project, locale }: LabCardProps) {
                 href={localizePath(locale, `/work/${project.slug}`)}
                 className="font-portfolio-sans font-semibold uppercase tracking-[0.06em] text-neutral-800 underline-offset-4 hover:underline"
               >
-                view
+                {project.view[locale]}
               </Link>
             )
           : null}

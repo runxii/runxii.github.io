@@ -23,6 +23,10 @@ export const projects: Project[] = [
         label: { en: 'github', zh: 'github' },
         href: 'https://github.com/runxii/job-radar',
       },
+    view: {
+      en: 'Case Study',
+      zh: '案例详情',
+    },
   },
   {
     slug: 'habichew',
@@ -46,6 +50,10 @@ export const projects: Project[] = [
         label: { en: 'github', zh: 'github' },
         href: 'https://github.com/Habichew/app',
       },
+    view: {
+      en: 'Case Study',
+      zh: '案例详情',
+    },
   },
   {
     slug: 'portfolio',
@@ -68,5 +76,9 @@ export const projects: Project[] = [
         label: { en: 'github', zh: 'github' },
         href: 'https://github.com/Habichew/app',
       },
+    view: {
+      en: 'Case Study',
+      zh: '案例详情',
+    },
   },
 ]

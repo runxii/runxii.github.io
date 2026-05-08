@@ -19,7 +19,7 @@ interface WorkListItem {
   subtitle?: Record<Locale, string>
   description: Record<Locale, string>
   image?: string
-  kind: 'project'
+  kind: Record<Locale, string>
   href: string
 }
 
@@ -56,7 +56,10 @@ export default async function WorkPage({ params }: PageProps) {
     subtitle: project.subtitle,
     description: project.description,
     image: project.image,
-    kind: 'project',
+    kind: {
+      en: 'project',
+      zh: '项目',
+    },
     href: `/work/${project.slug}`,
   }))
 
@@ -78,21 +81,21 @@ export default async function WorkPage({ params }: PageProps) {
           </h1>
           <p className="font-portfolio-sans mt-4 text-sm text-neutral-600">
             {typedLocale === 'zh'
-              ? '包含项目详情页与文章内容。'
-              : 'Includes project detail pages and articles.'}
+              ? '项目案例详情，文章，博客，工作记录'
+              : 'project case study, articles, blogs, record of work'}
           </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
           {workItems.map(item => (
             <Link
-              key={`${item.kind}-${item.slug}`}
+              key={`${item.kind[locale]}-${item.slug}`}
               href={localizePath(typedLocale, item.href)}
               className="block rounded-[12px] border border-neutral-200 bg-white/80 p-6 shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition hover:-translate-y-0.5 hover:shadow-[0_14px_36px_rgba(0,0,0,0.10)]"
             >
               <div className="mb-4 flex items-center justify-between">
-                <span className="font-portfolio-mono rounded-full bg-neutral-100 px-3 py-1 text-[10px] uppercase tracking-[0.08em] text-neutral-700">
-                  {item.kind}
+                <span className="font-portfolio-mono rounded-full bg-neutral-100 px-3 py-1 text-[11px] uppercase tracking-[0.08em] text-neutral-700">
+                  {item.kind[locale]}
                 </span>
               </div>
 
@@ -102,7 +105,7 @@ export default async function WorkPage({ params }: PageProps) {
 
               {item.subtitle
                 ? (
-                    <p className="font-portfolio-sans mt-2 text-sm text-neutral-500">
+                    <p className="font-portfolio-sans mt-2 text-xs text-neutral-500">
                       {item.subtitle[typedLocale]}
                     </p>
                   )

@@ -14,4 +14,5 @@ export interface Project {
   image: string
   link: ProjectLink
   featured?: boolean
+  view: Record<Locale, string>
 }
