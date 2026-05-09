@@ -33,7 +33,7 @@ function getFilterLabel(locale: Locale, type: WorkType) {
   return labels[type][locale]
 }
 
-export default function WorkFilterList({ locale, items }: WorkFilterListProps) {
+export default function LabFilterList({ locale, items }: WorkFilterListProps) {
   const [selectedType, setSelectedType] = useState<WorkType>('project')
 
   const filteredItems = useMemo(() => {
@@ -45,11 +45,11 @@ export default function WorkFilterList({ locale, items }: WorkFilterListProps) {
       <div className="mb-10 grid gap-10 lg:grid-cols-[1fr_470px] lg:items-start">
         <div>
           <p className="font-portfolio-mono text-[14px] text-black">
-            /work
+            /lab
           </p>
 
           <h1 className="font-portfolio-serif mt-4 text-[54px] leading-none text-black md:text-[64px]">
-            {locale === 'zh' ? '作品' : 'All Work'}
+            {locale === 'zh' ? '实验' : 'Lab'}
           </h1>
 
           <div className="mt-2 h-3 w-[255px] bg-[radial-gradient(circle,_rgba(132,219,218,0.9)_5px,_transparent_3px)] bg-[length:18px_14px] bg-repeat-x" />
@@ -82,7 +82,7 @@ export default function WorkFilterList({ locale, items }: WorkFilterListProps) {
         {filteredItems.map(item => (
           <Link
             key={`${item.type}-${item.slug}`}
-            href={localizePath(locale, `/work/${item.slug}`)}
+            href={localizePath(locale, `/lab/${item.slug}`)}
             className="group block"
           >
             <article className="grid w-full min-h-[208px] overflow-hidden rounded-[12px] bg-white shadow-[0_10px_28px_rgba(0,0,0,0.035)] transition hover:-translate-y-0.5 hover:shadow-[0_14px_36px_rgba(0,0,0,0.08)] md:grid-cols-[1fr_345px] lg:grid-cols-[1fr_350px]">

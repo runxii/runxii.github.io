@@ -3,8 +3,8 @@ import type { Profile } from '@/types/profile'
 export const profile: Profile = {
   name: 'Yang',
   role: {
-    en: 'web developer',
-    zh: '全栈开发',
+    en: 'full stack engineer',
+    zh: '网页设计 · 全栈开发',
   },
   heroIntro: {
     en: 'Builds maintainable web systems, full-stack applications, and practical engineering workflows.',

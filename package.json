@@ -8,7 +8,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "lint:report": "eslint . --format html -o ./lint-reports/test.html",
-    "predeploy": "node -e \"require('fs').writeFileSync('out/CNAME','yangxii.work\\n')\" && node -e \"require('fs').writeFileSync('out/.nojekyll','')\"",
+    "pre": "node -e \"require('fs').writeFileSync('out/CNAME','yangxii.work\\n')\" && node -e \"require('fs').writeFileSync('out/.nojekyll','')\"",
     "deploy": "gh-pages -d out -b main -r https://github.com/runxii/runxii.github.io.git --dotfiles"
   },
   "dependencies": {

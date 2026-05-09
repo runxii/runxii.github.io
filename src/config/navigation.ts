@@ -2,14 +2,8 @@ import type { NavItem } from '@/types/nav'
 
 export const navigation: NavItem[] = [
   {
-    key: 'homepage',
-    label: { en: 'homepage', zh: '首页' },
-    href: '/',
-    type: 'anchor',
-  },
-  {
-    key: 'experience',
-    label: { en: 'experience', zh: '经历' },
+    key: 'bio',
+    label: { en: 'bio', zh: '简历' },
     href: '#experience',
     type: 'anchor',
   },
@@ -19,16 +13,10 @@ export const navigation: NavItem[] = [
     href: '/work',
     type: 'route',
   },
-  {
-    key: 'about',
-    label: { en: 'profile', zh: '关于我' },
-    href: '#about',
-    type: 'anchor',
-  },
-  {
-    key: 'contact',
-    label: { en: 'contact', zh: '联络' },
-    href: '#contact',
-    type: 'anchor',
-  },
+  // {
+  //   key: 'lab',
+  //   label: { en: 'lab', zh: '实验' },
+  //   href: '/lab',
+  //   type: 'route',
+  // },
 ]

@@ -4,6 +4,13 @@
 @tailwind utilities;
 @plugin "@tailwindcss/typography";
 
+@theme {
+  --color-blue-mid: #74d6d4;
+  --color-blue-pale: #b9e3e1;
+  --color-red-pale: #ffdfd9;
+  --color-primary: #bd292f;
+}
+
 :root {
   --portfolio-bg: #fbf5ee;
 }

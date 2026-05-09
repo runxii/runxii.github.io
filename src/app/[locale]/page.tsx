@@ -49,7 +49,7 @@ export default async function LocaleHomePage({
   const projects = getFeaturedWork(typedLocale)
 
   return (
-    <div className="min-h-screen bg-[#f6f2ed] text-neutral-900">
+    <div className="min-h-screen text-neutral-900">
       <Header locale={typedLocale} navItems={navItems} />
 
       <main>

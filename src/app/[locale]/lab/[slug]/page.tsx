@@ -3,7 +3,6 @@ import type { Locale } from '@/types/i18n'
 import { notFound } from 'next/navigation'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import BlogContent from '@/components/layout/BlogContent'
 import Header from '@/components/layout/Header'
 import TechBadge from '@/components/ui/TechBadge'
 import { isLocale } from '@/lib/i18n'
@@ -65,10 +64,10 @@ export default async function WorkDetailPage({ params }: PageProps) {
   }
 
   return (
-    <main className="min-h-screen text-neutral-900">
+    <main className="min-h-screen bg-[#f6f2ed] text-neutral-900">
       <Header locale={typedLocale} navItems={navItems} />
 
-      <section className="mx-auto w-full max-w-[1500px] px-10 pb-24 pt-10 md:pt-12">
+      <article className="mx-auto w-full max-w-6xl px-6 py-12">
         <p className="font-portfolio-mono text-sm text-neutral-500">
           /work/
           {project.slug}
@@ -90,7 +89,7 @@ export default async function WorkDetailPage({ params }: PageProps) {
           {project.tag
             ? (
                 <span
-                  className="inline-flex items-center justify-center rounded-full bg-primary px-3 py-[5px] font-portfolio-sans text-[11px] font-bold uppercase leading-none tracking-[0.04em] text-white shadow-sm"
+                  className="inline-flex items-center justify-center rounded-full bg-[#bd292f] px-3 py-[5px] font-portfolio-sans text-[11px] font-bold uppercase leading-none tracking-[0.04em] text-white shadow-sm"
                 >
                   {project.tag}
                 </span>
@@ -102,16 +101,14 @@ export default async function WorkDetailPage({ params }: PageProps) {
           ))}
         </div>
 
-        <BlogContent>
-          <div
-            className="prose prose-neutral max-w-none font-portfolio-sans prose-headings:font-portfolio-serif prose-h1:text-5xl prose-h2:text-3xl prose-h3:text-2xl prose-p:leading-8 prose-img:rounded-[16px]"
-          >
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>
-              {project.content}
-            </ReactMarkdown>
-          </div>
-        </BlogContent>
-      </section>
+        <div
+          className="prose prose-neutral mt-12 max-w-none font-portfolio-sans prose-headings:font-portfolio-serif prose-h1:text-5xl prose-h2:text-3xl prose-h3:text-2xl prose-p:leading-8 prose-img:rounded-[16px]"
+        >
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+            {project.content}
+          </ReactMarkdown>
+        </div>
+      </article>
     </main>
   )
 }

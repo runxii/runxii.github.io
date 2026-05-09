@@ -18,9 +18,12 @@ export default function ExperienceTimeline({
           const isLeft = item.side === 'left'
           const cardTone
             = item.category === 'education'
-              ? '#B9E3E1'
-              : 'bg-[#FFDFD9]'
-
+              ? 'bg-blue-pale'
+              : 'bg-red-pale'
+          const nodeTone
+            = item.category === 'education'
+              ? 'bg-blue-mid'
+              : 'bg-red-400'
           return (
             <div
               key={item.id}
@@ -35,7 +38,7 @@ export default function ExperienceTimeline({
                           {item.dateLabel}
                         </h3>
                         <div
-                          className={`inline-block w-75% rounded-[2px] px-4 py-4 shadow-[0_0_14px_${cardTone}] bg-[${cardTone}]`}
+                          className={`inline-block w-75% rounded-[2px] px-4 py-4 shadow-[0_2px_10px_rgba(0,0,0,0.15)] ${cardTone}`}
                         >
                           <p className="my-2 font-portfolio-serif whitespace-pre-line mt-2 text-[18px] leading-5 text-neutral-900">
                             {item.title[locale]}
@@ -57,7 +60,7 @@ export default function ExperienceTimeline({
 
               <div className="relative">
                 <div
-                  className="absolute -left-[22px] top-3 hidden h-4 w-4 rounded-full bg-red-400 shadow-[0_2px_10px_rgba(0,0,0,0.15)] md:block"
+                  className={`absolute -left-[22px] top-3 hidden h-4 w-4 rounded-full ${nodeTone} shadow-[0_2px_10px_rgba(0,0,0,0.15)] md:block`}
                 />
 
                 {!isLeft
@@ -68,7 +71,7 @@ export default function ExperienceTimeline({
                         </h3>
 
                         <div
-                          className={`inline-block w-75% rounded-[2px] px-4 py-4 shadow-[0_0_12px_#FFDFD9] ${cardTone}`}
+                          className={`inline-block w-75% rounded-[2px] px-4 py-4 shadow-[0_2px_10px_rgba(0,0,0,0.15)] ${cardTone}`}
                         >
                           <p className="my-2 font-portfolio-serif mt-2 text-[18px] leading-5 text-neutral-900">
                             {item.title[locale]}
