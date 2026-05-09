@@ -2,8 +2,7 @@ import type { Locale } from '@/types/i18n'
 import type { NavItem } from '@/types/nav'
 import type { Project } from '@/types/project'
 import { navigation } from '@/config/navigation'
-// import { labs } from '@/data/labs'
-import { projects } from '@/data/projects'
+import { getAllWork, getFeaturedWork } from '@/lib/work'
 
 export function getLocalizedNav(locale: Locale): Array<{
   key: string
@@ -19,14 +18,22 @@ export function getLocalizedNav(locale: Locale): Array<{
   }))
 }
 
-export function getFeaturedProjects(allProjects: Project[]): Project[] {
-  return allProjects.filter(project => project.featured)
+export function getFeaturedProjects(locale: Locale): Project[] {
+  return getFeaturedWork(locale).filter(item => item.type === 'project')
 }
 
-export function getHeroProject(): Project | null {
-  return getFeaturedProjects(projects)[0] ?? null
+export function getHeroProject(locale: Locale): Project | null {
+  return getFeaturedProjects(locale)[0] ?? null
 }
-//
-// export function getLabProjects(): Project[] {
-//   return labs
-// }
+
+export function getProjects(locale: Locale): Project[] {
+  return getAllWork(locale).filter(item => item.type === 'project')
+}
+
+export function getBlogPosts(locale: Locale): Project[] {
+  return getAllWork(locale).filter(item => item.type === 'blog')
+}
+
+export function getLabProjects(locale: Locale): Project[] {
+  return getAllWork(locale).filter(item => item.type === 'lab')
+}

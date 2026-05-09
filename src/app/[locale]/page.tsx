@@ -6,17 +6,15 @@ import Header from '@/components/layout/Header'
 import AboutSection from '@/components/sections/AboutSection'
 import ExperienceSection from '@/components/sections/ExperienceSection'
 import HeroSection from '@/components/sections/HeroSection'
-import LabsSection from '@/components/sections/LabsSection'
-// import ProjectsSection from '@/components/sections/ProjectsSection'
+import ProjectsSection from '@/components/sections/ProjectsSection'
 import { siteConfig } from '@/config/site'
 import { experience } from '@/data/experience'
-// import { labs } from '@/data/labs'
 import { profile } from '@/data/profile'
-import { projects } from '@/data/projects'
 import { sectionLabels } from '@/data/sectionLabels'
 import { socialLinks } from '@/data/social'
 import { isLocale } from '@/lib/i18n'
 import { getLocalizedNav } from '@/lib/portfolio'
+import { getFeaturedWork } from '@/lib/work'
 
 export async function generateMetadata({
   params,
@@ -48,6 +46,7 @@ export default async function LocaleHomePage({
 
   const typedLocale: Locale = locale
   const navItems = getLocalizedNav(typedLocale)
+  const projects = getFeaturedWork(typedLocale)
 
   return (
     <div className="min-h-screen bg-[#f6f2ed] text-neutral-900">
@@ -60,7 +59,7 @@ export default async function LocaleHomePage({
         {/*  projects={projects} */}
         {/*  locale={typedLocale} */}
         {/* /> */}
-        <LabsSection
+        <ProjectsSection
           title={sectionLabels.projects[typedLocale]}
           items={projects}
           locale={typedLocale}

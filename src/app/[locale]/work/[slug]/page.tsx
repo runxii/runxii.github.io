@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 import type { Locale } from '@/types/i18n'
 import { notFound } from 'next/navigation'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 import Header from '@/components/layout/Header'
 import TechBadge from '@/components/ui/TechBadge'
-import { projects } from '@/data/projects'
 import { isLocale } from '@/lib/i18n'
 import { getLocalizedNav } from '@/lib/portfolio'
+import { getWorkBySlug, getWorkSlugs } from '@/lib/work'
 
 interface PageProps {
   params: Promise<{
@@ -15,10 +17,12 @@ interface PageProps {
 }
 
 export function generateStaticParams() {
-  return ['en', 'zh'].flatMap(locale =>
-    projects.map(project => ({
+  const locales: Locale[] = ['en', 'zh']
+
+  return locales.flatMap(locale =>
+    getWorkSlugs(locale).map(slug => ({
       locale,
-      slug: project.slug,
+      slug,
     })),
   )
 }
@@ -32,15 +36,15 @@ export async function generateMetadata({
     return {}
   }
 
-  const project = projects.find(item => item.slug === slug)
+  const project = getWorkBySlug(locale, slug)
 
   if (!project) {
     return {}
   }
 
   return {
-    title: `${project.title[locale]} | Work`,
-    description: project.description[locale],
+    title: `${project.title} | Work`,
+    description: project.description,
   }
 }
 
@@ -52,45 +56,59 @@ export default async function WorkDetailPage({ params }: PageProps) {
   }
 
   const typedLocale: Locale = locale
-  const project = projects.find(item => item.slug === slug)
+  const project = getWorkBySlug(typedLocale, slug)
   const navItems = getLocalizedNav(typedLocale)
+
   if (!project) {
     notFound()
   }
 
   return (
     <main className="min-h-screen bg-[#f6f2ed] text-neutral-900">
-      {/*  Header */}
       <Header locale={typedLocale} navItems={navItems} />
-      {/* Main content */}
-      <div className="mx-auto w-full max-w-4xl px-6 py-12 ">
+
+      <article className="mx-auto w-full max-w-6xl px-6 py-12">
         <p className="font-portfolio-mono text-sm text-neutral-500">
           /work/
           {project.slug}
         </p>
 
         <h1 className="font-portfolio-serif mt-4 text-5xl text-black">
-          {project.title[typedLocale]}
+          {project.title}
         </h1>
 
         {project.subtitle
           ? (
-              <p className="font-portfolio-mono mt-3 text-lg text-neutral-600">
-                {project.subtitle[typedLocale]}
+              <p className="font-portfolio-mono mt-3 text-sm text-neutral-600">
+                {project.subtitle}
               </p>
             )
           : null}
 
         <div className="mt-6 flex flex-wrap gap-2">
-          {project.stack.map(item => (
+          {project.tag
+            ? (
+                <span
+                  className="inline-flex items-center justify-center rounded-full bg-[#bd292f] px-3 py-[5px] font-portfolio-sans text-[11px] font-bold uppercase leading-none tracking-[0.04em] text-white shadow-sm"
+                >
+                  {project.tag}
+                </span>
+              )
+            : null}
+
+          {project.stack?.map(item => (
             <TechBadge key={item} label={item} />
           ))}
         </div>
 
-        <p className="font-portfolio-sans mt-8 max-w-2xl text-base leading-8 text-neutral-800">
-          {project.description[typedLocale]}
-        </p>
-      </div>
+        <div
+          className="prose prose-neutral mt-12 max-w-none font-portfolio-sans prose-headings:font-portfolio-serif prose-h1:text-5xl prose-h2:text-3xl prose-h3:text-2xl prose-p:leading-8 prose-img:rounded-[16px]"
+        >
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+            {project.content}
+          </ReactMarkdown>
+        </div>
+      </article>
     </main>
   )
 }

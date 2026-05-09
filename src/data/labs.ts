@@ -12,11 +12,11 @@
 //       zh: '用于岗位搜索与匹配的 AI 智能体',
 //     },
 //     description: {
-//       en: 'Compact lab entry for the portfolio grid.',
+//       en: 'Compact lab entry for the portfolio.md grid.',
 //       zh: '用于作品集网格展示的精简项目卡片。',
 //     },
 //     stack: ['Python', 'LLM', 'Flask', 'Agent'],
-//     image: '/data/img/job-job-radar.png',
+//     image: '/data/img/job-thumbnail.png',
 //     links: [{ label: { en: 'View', zh: '查看' }, href: '/card' }],
 //   },
 //   {
@@ -30,7 +30,7 @@
 //       zh: 'AI 辅助习惯养成移动应用',
 //     },
 //     description: {
-//       en: 'Compact lab entry for the portfolio grid.',
+//       en: 'Compact lab entry for the portfolio.md grid.',
 //       zh: '用于作品集网格展示的精简项目卡片。',
 //     },
 //     stack: ['Node.js', 'React', 'Swift', 'Android'],
@@ -38,7 +38,7 @@
 //     links: [{ label: { en: 'View', zh: '查看' }, href: '/card' }],
 //   },
 //   {
-//     slug: 'portfolio',
+//     slug: 'portfolio.md',
 //     title: {
 //       en: 'Portfolio',
 //       zh: 'Portfolio',
@@ -48,11 +48,11 @@
 //       zh: '基于 Next.js 与 Tailwind CSS 的个人网站',
 //     },
 //     description: {
-//       en: 'Compact lab entry for the portfolio grid.',
+//       en: 'Compact lab entry for the portfolio.md grid.',
 //       zh: '用于作品集网格展示的精简项目卡片。',
 //     },
 //     stack: ['Next.js', 'Tailwind CSS'],
-//     image: '/data/img/portfolio.png',
+//     image: '/data/img/portfolio.md.png',
 //     links: [{ label: { en: 'View', zh: '查看' }, href: '/' }],
 //   },
 // ]

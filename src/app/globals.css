@@ -2,9 +2,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@plugin "@tailwindcss/typography";
 
 :root {
-  --portfolio-bg: #f6f2ed;
+  --portfolio-bg: #fbf5ee;
 }
 
 html {
@@ -43,4 +44,13 @@ body {
   to {
     background-position-x: 100%;
   }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-mono), var(--font-serif-zh), monospace;
 }

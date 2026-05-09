@@ -20,7 +20,7 @@ export default function AboutSection({ profile, locale }: AboutSectionProps) {
       </div>
       <Container>
         <SectionTitle title={profile.aboutTitle[locale]} />
-        <div className="relative mx-auto h-[520px] w-80%">
+        <div className="relative mx-auto h-[520px] max-w-5xl">
           <div
             className="absolute inset-0 z-0"
             style={{
@@ -28,7 +28,7 @@ export default function AboutSection({ profile, locale }: AboutSectionProps) {
               filter: `blur(14px)`,
             }}
           />
-          <div className="relative z-10 flex h-full flex-col items-center justify-center px-8 text-center">
+          <div className="relative z-10 flex h-full flex-col items-center justify-center px-8">
             <p className="font-portfolio-mono text-[16px] leading-7 text-white">
               {profile.aboutText[locale]}
             </p>

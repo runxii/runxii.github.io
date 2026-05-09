@@ -12,12 +12,16 @@
     "deploy": "gh-pages -d out -b main -r https://github.com/runxii/runxii.github.io.git --dotfiles"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.19",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.26",
+    "gray-matter": "^4.0.3",
     "lucide-react": "^0.561.0",
     "next": "^16.1.6",
     "react": "19.2.1",
     "react-dom": "19.2.1",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
     "tailwind-merge": "^3.4.0",
     "zustand": "^5.0.9"
   },
@@ -32,6 +36,7 @@
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9.39.2",
     "eslint-config-next": "16.0.10",
+    "eslint-plugin-format": "^2.0.1",
     "eslint-plugin-react-refresh": "^0.5.0",
     "gh-pages": "^6.3.0",
     "postcss": "^8.5.6",

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import {
   DM_Serif_Display,
-  Fira_Code,
+  JetBrains_Mono,
   Noto_Sans,
   Noto_Sans_SC,
   Noto_Serif_SC,
@@ -17,7 +17,7 @@ const dmSerifDisplay = DM_Serif_Display({
   variable: '--font-serif-en',
 })
 
-const firaCode = Fira_Code({
+const firaCode = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--font-mono',
 })
@@ -70,7 +70,7 @@ export default async function LocaleLayout({
           notoSans.variable,
           notoSansSC.variable,
           notoSerifSc.variable,
-          'bg-portfolio text-neutral-900 antialiased',
+          'bg-portfolio.md text-neutral-900 antialiased',
         ].join(' ')}
       >
         {children}

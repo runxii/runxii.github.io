@@ -21,7 +21,7 @@ export const navigation: NavItem[] = [
   },
   {
     key: 'about',
-    label: { en: 'about me', zh: '关于我' },
+    label: { en: 'profile', zh: '关于我' },
     href: '#about',
     type: 'anchor',
   },

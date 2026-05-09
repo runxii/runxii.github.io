@@ -11,7 +11,7 @@ export const profile: Profile = {
     zh: '专注于可维护的 Web 系统、全栈应用与务实的软件工程实践。',
   },
   aboutTitle: {
-    en: 'About Me',
+    en: 'Profile',
     zh: '关于我',
   },
   aboutText: {
