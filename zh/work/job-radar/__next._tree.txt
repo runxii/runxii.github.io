@@ -1,8 +1,8 @@
-:HL["/_next/static/chunks/92087d4d267dd0be.css","style"]
-:HL["/_next/static/chunks/1598b1d76ca58c4b.css","style"]
-:HL["/_next/static/media/0c8f209abc35ee02-s.p.a4b9a15b.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/_next/static/media/677d9e534bf54982-s.p.f7abccf9.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/_next/static/media/70bc3e132a0a741e-s.p.15008bfb.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/_next/static/media/d31545d9b0740349-s.p.57968a5c.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/_next/static/media/dc6d2a64e9dbf3bc-s.p.4b9eb7a1.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-0:{"buildId":"QrFywYGwRv8mpa1QPZXE7","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"locale","paramType":"d","paramKey":"zh","hasRuntimePrefetch":false,"slots":{"children":{"name":"work","paramType":null,"paramKey":"work","hasRuntimePrefetch":false,"slots":{"children":{"name":"slug","paramType":"d","paramKey":"job-radar","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true}},"isRootLayout":false},"staleTime":300}
+:HL["/_next/static/chunks/0w9coak5uu081.css","style"]
+:HL["/_next/static/chunks/0h8zfu4amaibg.css","style"]
+:HL["/_next/static/media/0c8f209abc35ee02-s.p.03rqv30url-~q.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/677d9e534bf54982-s.p.0be_ei.r5cjco.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/70bc3e132a0a741e-s.p.1409xf.ylxg8g.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/d31545d9b0740349-s.p.0q.477vt-d4s4.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/dc6d2a64e9dbf3bc-s.p.11~i--ovv74c_.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+0:{"tree":{"name":"","param":null,"prefetchHints":0,"slots":{"children":{"name":"locale","param":{"type":"d","key":"zh","siblings":null},"prefetchHints":16,"slots":{"children":{"name":"work","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"job-radar","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}}}},"staleTime":300,"buildId":"w7MimboUX0ZhXHMREjWNA"}

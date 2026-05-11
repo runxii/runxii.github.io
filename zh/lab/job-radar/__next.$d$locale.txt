@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[39756,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"default"]
-3:I[37457,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"default"]
-:HL["/_next/static/chunks/92087d4d267dd0be.css","style"]
-:HL["/_next/static/chunks/1598b1d76ca58c4b.css","style"]
-0:{"buildId":"QrFywYGwRv8mpa1QPZXE7","rsc":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/92087d4d267dd0be.css","precedence":"next"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/1598b1d76ca58c4b.css","precedence":"next"}]],["$","html",null,{"lang":"zh","children":["$","body",null,{"className":"dm_serif_display_7fe2d076-module__kLy4Lq__variable jetbrains_mono_f0809558-module__FWGuHq__variable noto_sans_8d1d3561-module__0igbwW__variable noto_sans_sc_d1e26d51-module__RD4h2W__variable noto_serif_sc_6443c874-module__mhyzCq__variable bg-portfolio.md text-neutral-900 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]}]}]]}],"loading":null,"isPartial":false}
+2:I[39756,["/_next/static/chunks/01xlw8hd842-c.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
+3:I[37457,["/_next/static/chunks/01xlw8hd842-c.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
+:HL["/_next/static/chunks/0w9coak5uu081.css","style"]
+:HL["/_next/static/chunks/0h8zfu4amaibg.css","style"]
+0:{"rsc":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0w9coak5uu081.css","precedence":"next"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/0h8zfu4amaibg.css","precedence":"next"}]],["$","html",null,{"lang":"zh","children":["$","body",null,{"className":"dm_serif_display_7fe2d076-module__kLy4Lq__variable jetbrains_mono_f0809558-module__FWGuHq__variable noto_sans_8d1d3561-module__0igbwW__variable noto_sans_sc_d1e26d51-module__RD4h2W__variable noto_serif_sc_6443c874-module__mhyzCq__variable bg-portfolio.md text-neutral-900 antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"w7MimboUX0ZhXHMREjWNA"}
