@@ -10,7 +10,7 @@ stack:
   - LLM
   - Flask
   - Agent
-image: "/images/job-radar/cover.png"
+image: "/images/job-radar/cover.webp"
 type: "project"
 tag: AI Agent
 link:

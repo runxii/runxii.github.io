@@ -11,7 +11,7 @@ stack:
   - React Native
   - OpenAI API
   - RESTful API
-image: "/images/habichew/cover.png"
+image: "/images/habichew/cover.webp"
 link:
   label: "github"
   href: "https://github.com/Habichew/app"

@@ -4,11 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "optimg": "node optimg.mjs",
+    "prebuild": "npm run optimg",
     "build": "next build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "lint:report": "eslint . --format html -o ./lint-reports/test.html",
-    "pre": "node -e \"require('fs').writeFileSync('out/CNAME','yangxii.work\\n')\" && node -e \"require('fs').writeFileSync('out/.nojekyll','')\"",
+    "predeploy": "node -e \"require('fs').writeFileSync('out/CNAME','yangxii.work\\n')\" && node -e \"require('fs').writeFileSync('out/.nojekyll','')\"",
     "deploy": "gh-pages -d out -b main -r https://github.com/runxii/runxii.github.io.git --dotfiles"
   },
   "dependencies": {
@@ -40,6 +42,7 @@
     "eslint-plugin-react-refresh": "^0.5.0",
     "gh-pages": "^6.3.0",
     "postcss": "^8.5.6",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4.1.18",
     "typescript": "^5"
   }

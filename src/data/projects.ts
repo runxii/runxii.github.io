@@ -16,7 +16,7 @@
 //       zh: '一个基于 Python、PostgreSQL 与 OpenAI API 的求职系统，通过结构化评估、去重与轻量化流程设计，降低人工筛选成本。',
 //     },pr
 //     stack: ['Python', 'SQL', 'LLM', 'Flask', 'Agent'],
-//     image: '/images/projects/thumbnail.png',
+//     image: '/images-source/projects/thumbnail.png',
 //     featured: true,
 //     link:
 //       {
@@ -43,7 +43,7 @@
 //       zh: '一个基于 Python、PostgreSQL 与 OpenAI API 的求职系统，通过结构化评估、去重与轻量化流程设计，降低人工筛选成本。',
 //     },
 //     stack: ['Nodejs', 'React Native', 'Android', 'iOS', 'RESTful API'],
-//     image: '/images/projects/thumbnail.png',
+//     image: '/images-source/projects/thumbnail.png',
 //     featured: true,
 //     link:
 //       {
@@ -70,7 +70,7 @@
 //       zh: '用于作品集网格展示的精简项目卡片。',
 //     },
 //     stack: ['Next.js', 'Tailwind CSS'],
-//     image: '/images/projects/portfolio.md.png',
+//     image: '/images-source/projects/portfolio.md.png',
 //     link:
 //       {
 //         label: { en: 'github', zh: 'github' },

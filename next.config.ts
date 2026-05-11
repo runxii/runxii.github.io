@@ -6,7 +6,7 @@ import type { NextConfig } from 'next'
 const nextConfig: NextConfig = {
   /* config options here */
   output: 'export',
-  // It tells Next.js where to find assets (CSS, JS, images).
+  // It tells Next.js where to find assets (CSS, JS, images-source).
   // basePath: isProd ? `/${repo}` : "",
   // assetPrefix: isProd ? `/${repo}/` : "",
   images: { unoptimized: true },

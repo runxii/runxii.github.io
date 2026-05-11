@@ -9,7 +9,7 @@ stack:
   - React
   - Figma
   - TailwindCSS
-image: "/images/portfolio/cover.png"
+image: "/images/portfolio/cover.webp"
 type: "project"
 tag: Website
 link:

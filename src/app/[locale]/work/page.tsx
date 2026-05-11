@@ -16,6 +16,13 @@ interface PageProps {
   }>
 }
 
+export function generateStaticParams() {
+  return [
+    { locale: 'en' },
+    { locale: 'zh' },
+  ]
+}
+
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
@@ -29,8 +36,8 @@ export async function generateMetadata({
     title: locale === 'zh' ? 'Yang | 全部作品' : 'Yang | All Work',
     description:
         locale === 'zh'
-          ? '项目详情、博客与实验记录的统一索引页。'
-          : 'Unified index of projects, blogs, and lab records.',
+          ? '项目：思考，制作与展示'
+          : 'Projects: thinking, making and showing.',
   }
 }
 export default async function WorkPage({ params }: PageProps) {

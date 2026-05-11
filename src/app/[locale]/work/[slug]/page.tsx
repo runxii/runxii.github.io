@@ -21,10 +21,10 @@ export function generateStaticParams() {
   const locales: Locale[] = ['en', 'zh']
 
   return locales.flatMap(locale =>
-    getWorkSlugs(locale).map(slug => ({
-      locale,
-      slug,
-    })),
+      getWorkSlugs(locale).map(slug => ({
+        locale,
+        slug,
+      })),
   )
 }
 

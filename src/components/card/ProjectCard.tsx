@@ -35,11 +35,11 @@ export default function ProjectCard({ project, locale }: ProjectCardProps) {
         {project.image
           ? (
               <Image
-                src={`/images/${project.slug}/thumbnail.png`}
+                src={`/images/${project.slug}/thumbnail.webp`}
                 width={250}
                 height={250}
-                quality={80}
                 alt={project.title}
+                loading="eager"
               />
             )
           : (

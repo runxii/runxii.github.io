@@ -83,7 +83,6 @@ export default function WorkList({ locale, items }: WorkListProps) {
                         src={item.image}
                         alt={item.title}
                         fill
-                        quality={90}
                         className="object-cover"
                       />
                     )
